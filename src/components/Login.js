@@ -1,53 +1,18 @@
-import React, { useState } from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import React from "react";
+import LoginForm from "./LoginForm.js";
 
-const Login = props => {
-  const [credentials, setCredentials] = useState({
-    email: "",
-    password: ""
-  });
-
-  const handleChange = e => {
-    setCredentials({
-      ...credentials,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    axiosWithAuth()
-      .post(`/auth/login`, credentials)
-      .then(res => {
-        localStorage.setItem("token", res.data.token);
-        props.history.push("/profile");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    setCredentials({ email: "", password: "" });
-  };
-
+const Login = () => {
   return (
     <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          onChange={handleChange}
-          value={credentials.name}
-          type="email"
-          name="email"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={handleChange}
-          value={credentials.password}
-          type="password"
-          name="password"
-        />
-        <button type="submit">Login</button>
-      </form>
+      <h1>Get Pumped!</h1>
+      <p>Log in to your Pumpodoro account.</p>
+      <div>
+        <div>
+          <LoginForm />
+        </div>
+        <p>Don't have an account yet?</p>
+        <button>Sign up for free</button>
+      </div>
     </div>
   );
 };
