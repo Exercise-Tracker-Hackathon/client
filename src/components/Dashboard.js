@@ -1,17 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Dashboard = () => {
+  const [formState, setFormState] = useState({
+    exercises: [{ pushUps: false }, { pullUps: false }]
+  });
+
+  const handleChange = event => {
+    setFormState({
+      ...formState,
+      [event.target.name]: event.target.value
+    });
+  };
   return (
     <div>
       <h2>User Profile</h2>
       <form>
-        <label htmlFor="exercise-name">Exercise Name</label>
-        <select name="exercise-name" id="exercise-name">
-          <option value="">Select an Exercise</option>
-          <option value="push-ups">Push Ups</option>
-          <option value="sit-ups">Sit Ups</option>
-          <option value="pull-ups">Pull Ups</option>
-        </select>
+        <p>Choose An Exercise</p>
+        <label htmlFor="pushUps">Push Ups</label>
+        <input
+          onChange={handleChange}
+          id="pushUps"
+          type="checkbox"
+          value="pushUps"
+          name="pushUps"
+        />
+        <label htmlFor="sitUps">Sit Ups</label>
+        <input
+          onChange={handleChange}
+          id="sitUps"
+          type="checkbox"
+          value="sitUps"
+          name="sitUps"
+        />
+        <label htmlFor="pullUps">Pull Ups</label>
+        <input
+          onChange={handleChange}
+          id="pullUps"
+          type="checkbox"
+          value="pullUps"
+          name="pullUps"
+        />
+
+        <input
+          onChange={handleChange}
+          id="custom"
+          type="text"
+          value=""
+          name="custom"
+          placeholder="Custom Exercise"
+        />
+        <button type="submit">Start</button>
       </form>
     </div>
   );

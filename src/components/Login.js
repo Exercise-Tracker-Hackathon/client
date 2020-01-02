@@ -32,7 +32,7 @@ const Login = props => {
     <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label>Email</label>
+        <label htmlFor="email">Email</label>
         <input
           onChange={handleChange}
           value={credentials.name}

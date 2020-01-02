@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Signup = props => {
@@ -30,23 +33,31 @@ const Signup = props => {
   return (
     <div>
       <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input
-          onChange={handleChange}
-          value={credentials.email}
-          type="email"
-          name="email"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={handleChange}
-          value={credentials.password}
-          type="password"
-          name="password"
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            onChange={handleChange}
+            value={credentials.email}
+            type="email"
+            placeholder="Enter email"
+            name="email"
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            onChange={handleChange}
+            value={credentials.password}
+            type="password"
+            placeholder="Create a password"
+            name="password"
+          />
+          <Button varient="primary" type="submit">
+            Sign Up
+          </Button>
+        </Form.Group>
+      </Form>
     </div>
   );
 };
