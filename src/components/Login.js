@@ -3,7 +3,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Login = props => {
   const [credentials, setCredentials] = useState({
-    name: "",
+    email: "",
     password: ""
   });
 
@@ -20,24 +20,24 @@ const Login = props => {
       .post(`/login`, credentials)
       .then(res => {
         localStorage.setItem("token", res.data.token);
-        props.history.push("/tasks");
+        props.history.push("/");
       })
       .catch(err => {
         console.log(err);
       });
-    setCredentials({ name: "", password: "" });
+    setCredentials({ email: "", password: "" });
   };
 
   return (
     <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
+        <label>Email</label>
         <input
           onChange={handleChange}
           value={credentials.name}
-          type="text"
-          name="name"
+          type="email"
+          name="email"
         />
         <label htmlFor="password">Password</label>
         <input
