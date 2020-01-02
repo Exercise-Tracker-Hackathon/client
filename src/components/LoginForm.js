@@ -31,33 +31,31 @@ const LoginForm = props => {
   };
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            onChange={handleChange}
-            value={credentials.email}
-            type="email"
-            placeholder="Enter email"
-            name="email"
-          />
-        </Form.Group>
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            onChange={handleChange}
-            value={credentials.password}
-            type="password"
-            placeholder="Create a password"
-            name="password"
-          />
-          <Button varient="primary" type="submit">
-            Login
-          </Button>
-        </Form.Group>
-      </Form>
-    </div>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group controlId="formBasicEmail">
+        <Form.Label>Email</Form.Label>
+        <Form.Control
+          onChange={handleChange}
+          value={credentials.email}
+          type="email"
+          placeholder="Enter email"
+          name="email"
+        />
+      </Form.Group>
+      <Form.Group controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control
+          onChange={handleChange}
+          value={credentials.password}
+          type="password"
+          placeholder="Create a password"
+          name="password"
+        />
+      </Form.Group>
+      <Button style={{ width: "100%" }} type="submit">
+        Login
+      </Button>
+    </Form>
   );
 };
 
