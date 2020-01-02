@@ -19,7 +19,7 @@ const Signup = props => {
     axiosWithAuth()
       .post(`/register`, credentials)
       .then(res => {
-        props.history.push("/login");
+        props.history.push("/profile");
       })
       .catch(err => {
         console.log(err);
