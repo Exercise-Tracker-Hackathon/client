@@ -3,14 +3,14 @@ import SignupForm from "./SignupForm.js";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = props => {
   return (
     <div>
       <h1>Get Pumped!</h1>
       <p>Create your Pumpodoro account.</p>
       <Card style={{ padding: "2rem" }}>
         <Card style={{ margin: "2rem", padding: "2rem" }}>
-          <SignupForm />
+          <SignupForm {...props} />
         </Card>
         <p>Already have an account?</p>
         <Link

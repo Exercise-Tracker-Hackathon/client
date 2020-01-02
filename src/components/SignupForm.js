@@ -21,6 +21,9 @@ const SignupForm = props => {
     axiosWithAuth()
       .post(`/auth/register`, credentials)
       .then(res => {
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user", res.data.user);
+
         props.history.push("/profile");
       })
       .catch(err => {
@@ -51,8 +54,16 @@ const SignupForm = props => {
           name="password"
         />
       </Form.Group>
-      <Button style={{ width: "100%" }} type="submit">
-        Login
+      <Button
+        style={{
+          width: "100%",
+          color: "#FFF",
+          backgroundColor: "#EC6033",
+          border: "none"
+        }}
+        type="submit"
+      >
+        Sign Up
       </Button>
     </Form>
   );

@@ -3,6 +3,11 @@ import { NavLink } from "react-router-dom";
 import Logo from "./Logo.js";
 
 const NavBar = () => {
+  React.useEffect(() => {
+    const id = localStorage.getItem("token");
+    console.log(id);
+  }, []);
+
   return (
     <nav
       style={{
@@ -16,8 +21,15 @@ const NavBar = () => {
       }}
     >
       <NavLink to="/">
-        <h3 style={{ margin: "0", display: "flex", alignItems: "center" }}>
-          <Logo /> Pumpodoro
+        <h3
+          style={{
+            margin: "0",
+            display: "flex",
+            alignItems: "center",
+            color: "#A33A18"
+          }}
+        >
+          <Logo /> pumpodoro
         </h3>
       </NavLink>
       <div>
