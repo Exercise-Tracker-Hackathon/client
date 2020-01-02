@@ -17,10 +17,10 @@ const Login = props => {
   const handleSubmit = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post(`/login`, credentials)
+      .post(`/auth/login`, credentials)
       .then(res => {
         localStorage.setItem("token", res.data.token);
-        props.history.push("/");
+        props.history.push("/profile");
       })
       .catch(err => {
         console.log(err);

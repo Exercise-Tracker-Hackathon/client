@@ -16,7 +16,7 @@ function App() {
         <Route exact path="/" component={LandingPage} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Signup} />
-        <PrivateRoute exact path="/profile" component={Dashboard} />
+        <PrivateRoute path="/profile" component={Dashboard} />
       </Layout>
     </Router>
   );

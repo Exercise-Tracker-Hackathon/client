@@ -17,7 +17,7 @@ const Signup = props => {
   const handleSubmit = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post(`/register`, credentials)
+      .post(`/auth/register`, credentials)
       .then(res => {
         props.history.push("/profile");
       })
