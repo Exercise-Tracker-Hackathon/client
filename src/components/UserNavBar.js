@@ -50,7 +50,7 @@ const UserNavBar = ({ logOut }) => {
         </Button>
         <Button
           onClick={logOut}
-          style={{ background: "none", border: "none", color: "gray" }}
+          style={{ background: "none", border: "none", color: "#9F9F9F" }}
         >
           Logout
         </Button>
