@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Timer from "./Timer";
 import Logo from "./Logo.js";
 
 const UserNavBar = ({ logOut }) => {
@@ -28,7 +29,7 @@ const UserNavBar = ({ logOut }) => {
         </h3>
       </NavLink>
       <div>
-        <button>Start a Timer</button>
+        <Timer />
         <button>Add Exercise</button>
         <button onClick={logOut}>Logout</button>
       </div>
