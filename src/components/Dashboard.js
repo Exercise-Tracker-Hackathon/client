@@ -49,11 +49,11 @@ const Dashboard = () => {
         }}
         onClick={handleShow}
       >
-        Add Exercise Routine
+        Add Exercise
       </Button>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Add An Exercise</Modal.Title>
+      <Modal show={show} onHide={handleClose} centered>
+        <Modal.Header closeButton style={{ border: "none" }}>
+          {/* <Modal.Title>Create an exercise for today</Modal.Title> */}
         </Modal.Header>
         <Modal.Body>
           <AddWorkout addExercise={addExercise} handleClose={handleClose} />
@@ -69,7 +69,7 @@ const Dashboard = () => {
           }}
         >
           <p style={{ fontSize: "24px", fontFamily: "Actor, sans-serif" }}>
-            You don’t have any workouts yet. <br /> Create a workout to get
+            You don’t have any exercises yet. <br /> Create an exercise to get
             started.
           </p>
           <img src={logo} alt="logo" style={{ opacity: 0.5 }} />
