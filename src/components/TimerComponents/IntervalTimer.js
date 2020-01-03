@@ -19,11 +19,11 @@ class Timer extends Component {
         if (this.state.timerStarted) {
           if (this.state.seconds >= 60) {
             this.setState(prevState => ({
-              minutes: prevState.minutes + 1,
+              minutes: prevState.minutes - 1,
               seconds: 0
             }));
           }
-          this.setState(prevState => ({ seconds: prevState.seconds + 1 }));
+          this.setState(prevState => ({ seconds: prevState.seconds - 1 }));
         }
       }, 1000);
     }
@@ -45,9 +45,16 @@ class Timer extends Component {
     clearInterval(this.timer);
   }
 
+  handleSubmit = input => e => {
+    e.preventDefault();
+    this.setState({...this.state, [input]: e.target.value})
+  } 
+
   render() {
     return (
       <div className="container">
+        <input type='number'/>
+        <button type='submit' onSubmit={this.handleSubmit}>Submit</button>
         <h2 className="text-center">Time left</h2>
         <div className="timer-container">
           <div className="current-timer">
@@ -78,6 +85,7 @@ class Timer extends Component {
             >
               Reset!
             </button>
+            
           </div>
         </div>
       </div>
