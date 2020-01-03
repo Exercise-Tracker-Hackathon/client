@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import notification from "../assets/alarm.mp3";
 
 const Timer = () => {
   const [time, setTime] = useState(1200);
   const [isRunning, setIsRunning] = useState(false);
+  const [alarm, setAlarm] = useState(false);
 
   const updateTime = e => {
     let currentTime = e.target.value;
@@ -14,8 +16,17 @@ const Timer = () => {
     if (isRunning) {
       setIsRunning(false);
       setTime(1200);
+      setAlarm(false);
     } else {
       setIsRunning(true);
+    }
+  };
+
+  const audio = useRef();
+
+  const alert = () => {
+    if (audio.current !== null && alarm === true) {
+      return <audio autoPlay ref={audio} src={notification} type="audio" />;
     }
   };
 
@@ -43,9 +54,11 @@ const Timer = () => {
     () => {
       if (time === 0) {
         setIsRunning(false);
+        setTime(1200);
+        setAlarm(true);
+      } else {
+        setTime(() => time - 1);
       }
-
-      setTime(() => time - 1);
     },
     isRunning ? 1000 : null
   );
@@ -82,6 +95,7 @@ const Timer = () => {
           </span>
         ) : null}
       </div>
+      <>{alarm ? alert() : null}</>
     </>
   );
 };
