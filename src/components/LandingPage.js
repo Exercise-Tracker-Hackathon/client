@@ -16,7 +16,14 @@ const LandingPage = () => {
       {/* Section 1 */}
       <div className="main-hero">
         <img src={titleImg} alt="pumpodoro logo" />
-        <h2 style={{ color: "#A33A18", fontSize: "48px", textAlign: "center" }}>
+        <h2
+          style={{
+            color: "#A33A18",
+            fontSize: "48px",
+            textAlign: "center",
+            fontFamily: "Actor, sans-serif"
+          }}
+        >
           Pumpodoro combines <br /> activity with productivity
         </h2>
         <Button
@@ -29,7 +36,13 @@ const LandingPage = () => {
       </div>
 
       {/* Section 2 */}
-      <h2 style={{ margin: "4% 0 2% 15%", fontSize: "48px" }}>
+      <h2
+        style={{
+          margin: "4% 0 2% 15%",
+          fontSize: "48px",
+          fontFamily: "Actor, sans-serif"
+        }}
+      >
         What is pumpodoro?
       </h2>
       <div className="about-section">
@@ -43,8 +56,8 @@ const LandingPage = () => {
           </p>
           <p>
             Research suggests that 5-10 minutes a day of high intensity exercise
-            can provide the same health benefits as 45 minutes of moderate
-            workouts.
+            can provide the same health benefits as 45 minutes of a moderate
+            workout.
           </p>
         </div>
         <div className="image-ctr">
@@ -69,7 +82,13 @@ const LandingPage = () => {
         </div>
       </div>
       {/* Section 3 */}
-      <h2 style={{ margin: "4% 0 0.5% 15%", fontSize: "48px" }}>
+      <h2
+        style={{
+          margin: "4% 0 0.5% 15%",
+          fontSize: "48px",
+          fontFamily: "Actor, sans-serif"
+        }}
+      >
         A few benefits
       </h2>
       <p style={{ margin: "0 0 2% 15%", fontSize: "24px" }}>
