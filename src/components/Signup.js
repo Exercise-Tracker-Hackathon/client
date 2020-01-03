@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const SignUp = props => {
   return (
     <div>
-      <h1>Get Pumped!</h1>
+      <h1>Get Pumped!!</h1>
       <p>Create your Pumpodoro account.</p>
       <Card style={{ padding: "2rem" }}>
         <Card style={{ margin: "2rem", padding: "2rem" }}>

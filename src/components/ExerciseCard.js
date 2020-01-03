@@ -16,6 +16,7 @@ const ExerciseCard = ({ exercise }) => {
         </Card.Text>
         <Button
           style={{
+            border: "none",
             borderRadius: "50%",
             backgroundColor: "#EC6033",
             color: "#FFF",
