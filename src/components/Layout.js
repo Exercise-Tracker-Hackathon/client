@@ -1,10 +1,10 @@
 import React from "react";
 import NavBar from "./NavBar";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, setIsLoggedIn, isLoggedIn }) => {
   return (
     <>
-      <NavBar />
+      <NavBar setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
       <main>
         <div className="container">{children}</div>
       </main>

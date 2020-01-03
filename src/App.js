@@ -10,11 +10,16 @@ import PrivateRoute from "./components/PrivateRoute";
 import "./App.css";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
   return (
     <Router>
-      <Layout>
+      <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
         <Route exact path="/" component={LandingPage} />
-        <Route path="/login" component={Login} />
+        <Route
+          path="/login"
+          render={props => <Login {...props} setIsLoggedIn={setIsLoggedIn} />}
+        />
         <Route path="/register" component={SignUp} />
         <PrivateRoute path="/profile" component={Dashboard} />
       </Layout>

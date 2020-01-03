@@ -23,6 +23,7 @@ const LoginForm = props => {
       .then(res => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.user.id);
+        props.setIsLoggedIn(true);
         props.history.push("/profile");
       })
       .catch(err => {
