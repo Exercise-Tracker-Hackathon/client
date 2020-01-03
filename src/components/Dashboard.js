@@ -6,7 +6,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import logo from "../assets/pumpordo-logo.png";
 import ExerciseCardList from "./ExerciseCardList";
 import plus from "../assets/plus.svg";
-// import HeatMap from "./HeatMap";
+import HeatMap from "./HeatMap";
 
 const Dashboard = () => {
   const [exercises, setExercises] = useState([]);
@@ -90,7 +90,7 @@ const Dashboard = () => {
       {exercises.length > 0 && (
         <div>
           <ExerciseCardList exercises={exercises} addSet={addSet} />
-          {/* <HeatMap exercises={exercises} /> */}
+          <HeatMap exercises={exercises} />
         </div>
       )}
     </div>
