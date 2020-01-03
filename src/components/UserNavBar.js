@@ -37,7 +37,6 @@ const UserNavBar = ({ logOut }) => {
         }}
       >
         <Timer />
-        <button>Add Exercise</button>
         <button onClick={logOut}>Logout</button>
       </div>
     </nav>

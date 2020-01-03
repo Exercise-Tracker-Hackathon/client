@@ -45,7 +45,7 @@ const Timer = () => {
         setIsRunning(false);
       }
 
-      setTime(time - 1);
+      setTime(() => time - 1);
     },
     isRunning ? 1000 : null
   );
