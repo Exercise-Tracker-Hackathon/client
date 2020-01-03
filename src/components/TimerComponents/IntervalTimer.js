@@ -52,7 +52,13 @@ class Timer extends Component {
         <h2 className="text-center">Time left</h2>
         <div className="timer-container">
           <div className="current-timer">
-            {this.state.minutes + ":" + this.state.seconds}
+            {this.state.minutes < 10
+              ? `0${this.state.minutes}`
+              : this.state.minutes}{" "}
+            :
+            {this.state.seconds < 10
+              ? `0${this.state.seconds}`
+              : this.state.seconds}
           </div>
           <div className="timer-controls">
             <button

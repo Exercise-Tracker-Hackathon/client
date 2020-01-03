@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-const ExerciseCard = ({ exercise }) => {
-  const handleClick = () => {};
+const ExerciseCard = ({ exercise, addSet }) => {
+  const handleClick = () => {
+    axiosWithAuth()
+      .post(`/sets`, { exercise_id: `${exercise.id}` })
+      .then(res => {
+        addSet();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   return (
     <Card>

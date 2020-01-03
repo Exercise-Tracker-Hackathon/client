@@ -1,50 +1,54 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
+import UserNavBar from "./UserNavBar";
 import Logo from "./Logo.js";
 
-const NavBar = () => {
-  React.useEffect(() => {
-    const id = localStorage.getItem("token");
-    console.log(id);
-  }, []);
+const NavBar = props => {
+  console.log(props.isLoggedIn);
+  const logOut = e => {
+    localStorage.clear();
+    props.setIsLoggedIn(false);
+    props.history.push("/");
+  };
 
-  return (
-    <nav
-      style={{
-        padding: "0 15px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexWrap: "wrap",
-        maxWidth: "1200px",
-        margin: "0 auto"
-      }}
-    >
-      <NavLink to="/">
-        <h3
-          style={{
-            margin: "0",
-            display: "flex",
-            alignItems: "center",
-            color: "#A33A18"
-          }}
-        >
-          <Logo /> pumpodoro
-        </h3>
-      </NavLink>
-      <div>
-        <NavLink style={{ margin: "0 10px" }} to="/login">
-          Login
+  if (props.isLoggedIn) {
+    return <UserNavBar logOut={logOut} {...props} />;
+  } else {
+    return (
+      <nav
+        style={{
+          padding: "0 15px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          maxWidth: "1200px",
+          margin: "0 auto"
+        }}
+      >
+        <NavLink to="/">
+          <h3
+            style={{
+              margin: "0",
+              display: "flex",
+              alignItems: "center",
+              color: "#A33A18"
+            }}
+          >
+            <Logo /> pumpodoro
+          </h3>
         </NavLink>
-        <NavLink style={{ margin: "0 10px" }} to="/register">
-          Register
-        </NavLink>
-        <NavLink style={{ margin: "0 0 0 10px" }} to="/profile">
-          Dashboard
-        </NavLink>
-      </div>
-    </nav>
-  );
+        <div>
+          <NavLink style={{ margin: "0 10px" }} to="/login">
+            Login
+          </NavLink>
+          <NavLink style={{ margin: "0 10px" }} to="/register">
+            Register
+          </NavLink>
+        </div>
+      </nav>
+    );
+  }
 };
 
-export default NavBar;
+export default withRouter(NavBar);
