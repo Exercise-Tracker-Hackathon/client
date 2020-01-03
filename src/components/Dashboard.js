@@ -32,7 +32,25 @@ const Dashboard = () => {
   }, [submitted, addedSet]);
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "flex-start"
+      }}
+    >
+      <Button
+        style={{
+          background: "#EC6033",
+          border: "none",
+          padding: "10px 30px",
+          margin: "30px"
+        }}
+        onClick={handleShow}
+      >
+        Add Exercise Routine
+      </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add An Exercise</Modal.Title>
@@ -58,15 +76,11 @@ const Dashboard = () => {
         </div>
       )}
       {exercises.length > 0 && (
-        <>
+        <div>
           <ExerciseCardList exercises={exercises} addSet={addSet} />
           {/* <HeatMap exercises={exercises} /> */}
-        </>
+        </div>
       )}
-
-      <Button variant="primary" onClick={handleShow}>
-        Add Exercise Routine
-      </Button>
     </div>
   );
 };

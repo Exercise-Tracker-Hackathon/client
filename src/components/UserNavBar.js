@@ -8,7 +8,7 @@ const UserNavBar = ({ logOut }) => {
   return (
     <nav
       style={{
-        padding: "0 15px",
+        padding: "15px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
