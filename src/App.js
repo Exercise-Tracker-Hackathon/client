@@ -5,7 +5,6 @@ import Login from "./components/Login";
 import LandingPage from "./components/LandingPage";
 import SignUp from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
-import AddWorkout from "./components/AddWorkout";
 import PrivateRoute from "./components/PrivateRoute";
 
 import "./App.css";
@@ -18,7 +17,6 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={SignUp} />
         <PrivateRoute path="/profile" component={Dashboard} />
-        <PrivateRoute path="/add-workout" component={AddWorkout} />
       </Layout>
     </Router>
   );
