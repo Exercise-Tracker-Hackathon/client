@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import Timer from "./IntervalTimer";
 import titleImg from "../assets/pumpordo-logo.png";
 import heart from "../assets/heartbeat.svg";
 import brain from "../assets/brain.svg";
@@ -9,6 +8,8 @@ import productivity from "../assets/profits.svg";
 import man from "../assets/man.svg";
 import woman from "../assets/woman.svg";
 import "../styles/LandingPage.css";
+import TimerInput from "./TimerComponents/TimerInput";
+import Timer from "./TimerComponents/IntervalTimer";
 
 const LandingPage = () => {
   return (
@@ -94,6 +95,7 @@ const LandingPage = () => {
       <p style={{ margin: "0 0 2% 15%", fontSize: "24px" }}>
         Here are just a few reasons to add pumpodoro to your daily routine.
       </p>
+
       <div className="benefits">
         <section style={{ marginRight: "120px" }}>
           <img src={heart} alt="heart" style={{ width: "171px" }} />
@@ -125,6 +127,7 @@ const LandingPage = () => {
           </p>
         </section>
       </div>
+      <TimerInput />
       <Timer />
     </div>
   );

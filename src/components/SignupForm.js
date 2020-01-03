@@ -23,7 +23,7 @@ const SignupForm = props => {
       .then(res => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.saved.id);
-
+        props.setIsLoggedIn(true);
         props.history.push("/profile");
       })
       .catch(err => {
