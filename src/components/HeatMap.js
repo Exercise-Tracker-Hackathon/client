@@ -93,7 +93,7 @@ export default function({ exercises }) {
           fontSize: "11.5px",
           color: "#000"
         })}
-        cellRender={value => value && `${value}%`}
+        cellRender={value => value && `${value}`}
       />
     </div>
   );
