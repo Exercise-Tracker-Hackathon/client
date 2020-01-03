@@ -16,9 +16,16 @@ const ExerciseCard = ({ exercise, addSet }) => {
   };
 
   return (
-    <Card>
-      <Card.Body>
-        <Card.Text>
+    <Card
+      style={{
+        width: "245px",
+        background: "#FFEBE4",
+        border: "none",
+        borderRadius: "5px"
+      }}
+    >
+      <Card.Body style={{ display: "flex", justifyContent: "space-between" }}>
+        <Card.Text style={{}}>
           {exercise.reps} {exercise.type}
           <br />
           {exercise.sets} sets
@@ -27,7 +34,7 @@ const ExerciseCard = ({ exercise, addSet }) => {
           style={{
             border: "none",
             borderRadius: "50%",
-            backgroundColor: "#EC6033",
+            backgroundColor: "#A33A18",
             color: "#FFF",
             fontSize: "44px",
             lineHeight: "1",

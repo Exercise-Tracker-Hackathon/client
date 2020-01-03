@@ -5,6 +5,7 @@ import AddWorkout from "./AddWorkout";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import logo from "../assets/pumpordo-logo.png";
 import ExerciseCardList from "./ExerciseCardList";
+import plus from "../assets/plus.svg";
 // import HeatMap from "./HeatMap";
 
 const Dashboard = () => {
@@ -42,14 +43,23 @@ const Dashboard = () => {
     >
       <Button
         style={{
-          background: "#EC6033",
-          border: "none",
+          background: "none",
+          border: "1px solid #9f9f9f",
           padding: "10px 30px",
-          margin: "30px"
+          margin: "15px 50px 30px 0",
+          alignSelf: "center",
+          color: "#9f9f9f",
+          display: "flex",
+          alignItems: "center"
         }}
         onClick={handleShow}
       >
-        Add Exercise
+        <img
+          src={plus}
+          alt="plus"
+          style={{ height: "18px", margin: "0 10px 0 0" }}
+        />
+        Create an Exercise
       </Button>
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton style={{ border: "none" }}>
