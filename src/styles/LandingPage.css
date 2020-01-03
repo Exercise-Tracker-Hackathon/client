@@ -1,0 +1,68 @@
+.landing-page .main-hero {
+  background: #ffebe4;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-page .main-hero img {
+  margin-top: 60px;
+}
+
+.landing-page .main-hero .button {
+  margin: 40px 0 100px 0;
+  font-size: 20px;
+}
+
+.landing-page .about-section {
+  background: #ec6033;
+  width: 75%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.landing-page .about-section .content {
+  color: #fff;
+  width: 45%;
+  font-size: 24px;
+}
+
+.landing-page .about-section .image-ctr {
+  background: #fff;
+  width: 35%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.landing-page .benefits {
+  background: #6bb48c;
+  width: 100%;
+  margin: 0 auto;
+  padding: 150px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.landing-page .benefits section {
+  background: #fff;
+  height: 355px;
+  width: 265px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+.landing-page .benefits section p {
+  text-align: center;
+}
