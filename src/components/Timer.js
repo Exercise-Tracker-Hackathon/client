@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import play from "../assets/play.svg";
+import stop from "../assets/stop.svg";
 import notification from "../assets/alarm.mp3";
 
 const Timer = () => {
@@ -79,21 +81,49 @@ const Timer = () => {
               id="time"
               type="number"
               value={time / 60}
+              style={{
+                width: "70px",
+                margin: "0 5px",
+                padding: "3px",
+                fontSize: "20px",
+                textAlign: "center",
+                borderRadius: "3px",
+                border: "1px solid #9F9F9F"
+              }}
             />
           </>
         )}
-
-        <button onClick={toggleTimer} className="btn btn--blue start">
-          {isRunning ? "Stop" : "Start"}
-        </button>
         {isRunning ? (
-          <span>
-            Time Remaining:{" "}
-            <span className="current-time">
+          <span style={{ margin: "0 5px" }}>
+            Time Remaining{" "}
+            <span
+              className="current-time"
+              style={{
+                fontSize: "20px",
+                border: "1px solid #9F9F9F",
+                padding: "6px",
+                borderRadius: "3px"
+              }}
+            >
               {minutes} : {seconds}
             </span>
           </span>
         ) : null}
+        {isRunning ? (
+          <img
+            src={stop}
+            alt="stop button"
+            onClick={toggleTimer}
+            style={{ cursor: "pointer" }}
+          />
+        ) : (
+          <img
+            src={play}
+            alt="play button"
+            onClick={toggleTimer}
+            style={{ cursor: "pointer" }}
+          />
+        )}
       </div>
       <>{alarm ? alert() : null}</>
     </>

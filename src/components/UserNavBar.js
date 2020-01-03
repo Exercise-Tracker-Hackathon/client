@@ -30,25 +30,6 @@ const UserNavBar = ({ logOut }) => {
         </h3>
       </NavLink>
 
-      <div>
-        <Button
-          style={{ background: "none", border: "none", color: "#9F9F9F" }}
-        >
-          Start a Timer
-        </Button>
-        <Button
-          href="/profile"
-          style={{ background: "none", border: "none", color: "#9F9F9F" }}
-        >
-          Go to Dashboard
-        </Button>
-        <Button
-          onClick={logOut}
-          style={{ background: "none", border: "none", color: "gray" }}
-        >
-          Logout
-        </Button>
-      </div>
       <div
         style={{
           display: "flex",
@@ -58,7 +39,21 @@ const UserNavBar = ({ logOut }) => {
         }}
       >
         <Timer />
-        <button onClick={logOut}>Logout</button>
+      </div>
+
+      <div>
+        <Button
+          href="/profile"
+          style={{ background: "none", border: "none", color: "#9F9F9F" }}
+        >
+          Dashboard
+        </Button>
+        <Button
+          onClick={logOut}
+          style={{ background: "none", border: "none", color: "#9F9F9F" }}
+        >
+          Logout
+        </Button>
       </div>
     </nav>
   );
