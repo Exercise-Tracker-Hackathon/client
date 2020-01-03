@@ -94,14 +94,14 @@ const LandingPage = () => {
       </p>
 
       <div className="benefits">
-        <section style={{ marginRight: "120px" }}>
+        <section style={{ marginRight: "5%" }}>
           <img src={heart} alt="heart" style={{ width: "171px" }} />
           <p>
             High intensity exercise for 5-10 minutes can provide the same
             cardiovascular benefit as 45 minutes of moderate exercise.
           </p>
         </section>
-        <section style={{ marginRight: "120px" }}>
+        <section style={{ marginRight: "5%" }}>
           <img
             src={brain}
             alt="brain"

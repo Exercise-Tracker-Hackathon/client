@@ -19,7 +19,7 @@
 
 .landing-page .about-section {
   background: #ec6033;
-  width: 85%;
+  width: 90%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 50px 100px;
@@ -36,7 +36,8 @@
 
 .landing-page .about-section .image-ctr {
   background: #fff;
-  width: 42%;
+  width: 45%;
+  max-width: 450px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -47,7 +48,7 @@
   background: #6bb48c;
   width: 100%;
   margin: 0 auto;
-  padding: 150px;
+  padding: 75px;
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
