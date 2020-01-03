@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Timer from "./Timer";
 import Logo from "./Logo.js";
 
 const UserNavBar = ({ logOut }) => {
@@ -11,7 +12,7 @@ const UserNavBar = ({ logOut }) => {
         justifyContent: "space-between",
         alignItems: "center",
         flexWrap: "wrap",
-        maxWidth: "1200px",
+        maxWidth: "1400px",
         margin: "0 auto"
       }}
     >
@@ -27,9 +28,15 @@ const UserNavBar = ({ logOut }) => {
           <Logo /> pumpodoro
         </h3>
       </NavLink>
-      <div>
-        <button>Start a Timer</button>
-        <button>Add Exercise</button>
+      <div
+        style={{
+          display: "flex",
+          flex: 2,
+          justifyContent: "space-around",
+          alignItems: "center"
+        }}
+      >
+        <Timer />
         <button onClick={logOut}>Logout</button>
       </div>
     </nav>
