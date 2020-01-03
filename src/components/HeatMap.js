@@ -72,14 +72,14 @@ export default function({ exercises }) {
             return `${b.sets} Sets of ${b.reps} ${b.type}\n`;
           })
           .join("");
-      } else {
-        return "You haven't exercised on this day yet!";
       }
     }
   };
 
   const clickHandler = (x, y) => {
-    alert(displayData(x, y));
+    if (displayData(x, y)) {
+      alert(displayData(x, y));
+    }
   };
 
   // Display only even labels
