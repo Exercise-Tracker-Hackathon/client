@@ -15,7 +15,7 @@ const UserNavBar = ({ logOut }) => {
         margin: "0 auto"
       }}
     >
-      <NavLink to="/">
+      <NavLink to="/profile">
         <h3
           style={{
             margin: "0",

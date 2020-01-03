@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TimerInput from "./TimerComponents/TimerInput";
 import Timer from "./TimerComponents/IntervalTimer";
 
 const LandingPage = () => {
@@ -14,6 +15,7 @@ const LandingPage = () => {
         Pumpodora keeps track of your best exercises to motivate you to push
         further, and see your progress.
       </p>
+      <TimerInput />
       <Timer />
       <Link className="login" to="/login">
         Login
