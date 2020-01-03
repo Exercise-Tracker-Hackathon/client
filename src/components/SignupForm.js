@@ -42,6 +42,7 @@ const SignupForm = props => {
           type="email"
           placeholder="Enter email"
           name="email"
+          style={{ height: "40px" }}
         />
       </Form.Group>
       <Form.Group controlId="formBasicPassword">
@@ -52,6 +53,7 @@ const SignupForm = props => {
           type="password"
           placeholder="Create a password"
           name="password"
+          style={{ height: "40px" }}
         />
       </Form.Group>
       <Button
@@ -59,7 +61,9 @@ const SignupForm = props => {
           width: "100%",
           color: "#FFF",
           backgroundColor: "#EC6033",
-          border: "none"
+          border: "none",
+          height: "50px",
+          marginTop: "40px"
         }}
         type="submit"
       >

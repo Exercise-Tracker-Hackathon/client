@@ -42,6 +42,7 @@ const LoginForm = props => {
           type="email"
           placeholder="Enter email"
           name="email"
+          style={{ height: "40px" }}
         />
       </Form.Group>
       <Form.Group controlId="formBasicPassword">
@@ -50,8 +51,9 @@ const LoginForm = props => {
           onChange={handleChange}
           value={credentials.password}
           type="password"
-          placeholder="Create a password"
+          placeholder="Enter your password"
           name="password"
+          style={{ height: "40px" }}
         />
       </Form.Group>
       <Button
@@ -59,7 +61,9 @@ const LoginForm = props => {
           width: "100%",
           color: "#FFF",
           backgroundColor: "#EC6033",
-          border: "none"
+          border: "none",
+          height: "50px",
+          marginTop: "40px"
         }}
         type="submit"
       >

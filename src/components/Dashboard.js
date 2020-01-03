@@ -9,9 +9,9 @@ import ExerciseCardList from "./ExerciseCardList";
 
 const Dashboard = () => {
   const [exercises, setExercises] = useState([]);
+  const [addedSet, setAddedSet] = useState(false);
   const [show, setShow] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [addedSet, setAddedSet] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,7 +32,25 @@ const Dashboard = () => {
   }, [submitted, addedSet]);
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "flex-start"
+      }}
+    >
+      <Button
+        style={{
+          background: "#EC6033",
+          border: "none",
+          padding: "10px 30px",
+          margin: "30px"
+        }}
+        onClick={handleShow}
+      >
+        Add Exercise Routine
+      </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add An Exercise</Modal.Title>
@@ -42,24 +60,27 @@ const Dashboard = () => {
         </Modal.Body>
       </Modal>
       {exercises.length === 0 && (
-        <>
-          <p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            margin: "100px 0 0 0"
+          }}
+        >
+          <p style={{ fontSize: "24px", fontFamily: "Actor, sans-serif" }}>
             You don’t have any workouts yet. <br /> Create a workout to get
             started.
           </p>
           <img src={logo} alt="logo" style={{ opacity: 0.5 }} />
-        </>
+        </div>
       )}
       {exercises.length > 0 && (
-        <>
+        <div>
           <ExerciseCardList exercises={exercises} addSet={addSet} />
           {/* <HeatMap exercises={exercises} /> */}
-        </>
+        </div>
       )}
-
-      <Button variant="primary" onClick={handleShow}>
-        Add Exercise Routine
-      </Button>
     </div>
   );
 };

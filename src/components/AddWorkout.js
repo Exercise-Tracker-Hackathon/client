@@ -38,7 +38,7 @@ const AddWorkout = ({ handleClose, addExercise }) => {
             name="type"
             type="text"
             value={exercise.name}
-            placeholder="Push ups"
+            placeholder="Push Ups"
           />
         </Form.Group>
 
@@ -57,9 +57,18 @@ const AddWorkout = ({ handleClose, addExercise }) => {
           create a new exercise on your dashboard where you can record the
           number of sets you’ve completed.
         </p>
-        <Button type="submit">Save</Button>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
+        <Button style={{ background: "#EC6033", border: "none" }} type="submit">
+          Save
+        </Button>
+        <Button
+          style={{
+            background: "none",
+            border: "1px solid #EC6033",
+            color: "#EC6033"
+          }}
+          onClick={handleClose}
+        >
+          Cancel
         </Button>
       </Form>
     </div>
