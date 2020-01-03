@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import plusBtn from "../assets/plus-btn.svg";
 
 const ExerciseCard = ({ exercise, addSet }) => {
   const handleClick = () => {
@@ -16,27 +16,28 @@ const ExerciseCard = ({ exercise, addSet }) => {
   };
 
   return (
-    <Card>
-      <Card.Body>
+    <Card
+      style={{
+        minWidth: "245px",
+        width: "20%",
+        background: "#FFEBE4",
+        border: "none",
+        borderRadius: "5px",
+        margin: "0 15px"
+      }}
+    >
+      <Card.Body style={{ display: "flex", justifyContent: "space-between" }}>
         <Card.Text>
           {exercise.reps} {exercise.type}
           <br />
           {exercise.sets} sets
         </Card.Text>
-        <Button
-          style={{
-            border: "none",
-            borderRadius: "50%",
-            backgroundColor: "#EC6033",
-            color: "#FFF",
-            fontSize: "44px",
-            lineHeight: "1",
-            padding: ".375rem 1rem 1rem 1rem"
-          }}
+        <img
+          src={plusBtn}
+          alt="add a set"
           onClick={handleClick}
-        >
-          +
-        </Button>
+          style={{ cursor: "pointer" }}
+        />
       </Card.Body>
     </Card>
   );

@@ -5,7 +5,8 @@ import AddWorkout from "./AddWorkout";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import logo from "../assets/pumpordo-logo.png";
 import ExerciseCardList from "./ExerciseCardList";
-// import HeatMap from "./HeatMap";
+import plus from "../assets/plus.svg";
+import HeatMap from "./HeatMap";
 
 const Dashboard = () => {
   const [exercises, setExercises] = useState([]);
@@ -37,23 +38,34 @@ const Dashboard = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "flex-start"
+        padding: "0 50px",
+        margin: "0 auto",
+        width: "90%"
       }}
     >
       <Button
         style={{
-          background: "#EC6033",
-          border: "none",
+          background: "none",
+          border: "1px solid #9f9f9f",
           padding: "10px 30px",
-          margin: "30px"
+          margin: "15px 50px 30px 0",
+          alignSelf: "center",
+          color: "#9f9f9f",
+          display: "flex",
+          alignItems: "center"
         }}
         onClick={handleShow}
       >
-        Add Exercise Routine
+        <img
+          src={plus}
+          alt="plus"
+          style={{ height: "18px", margin: "0 10px 0 0" }}
+        />
+        Create an Exercise
       </Button>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Add An Exercise</Modal.Title>
+      <Modal show={show} onHide={handleClose} centered>
+        <Modal.Header closeButton style={{ border: "none" }}>
+          {/* <Modal.Title>Create an exercise for today</Modal.Title> */}
         </Modal.Header>
         <Modal.Body>
           <AddWorkout addExercise={addExercise} handleClose={handleClose} />
@@ -69,7 +81,7 @@ const Dashboard = () => {
           }}
         >
           <p style={{ fontSize: "24px", fontFamily: "Actor, sans-serif" }}>
-            You don’t have any workouts yet. <br /> Create a workout to get
+            You don’t have any exercises yet. <br /> Create an exercise to get
             started.
           </p>
           <img src={logo} alt="logo" style={{ opacity: 0.5 }} />
@@ -78,7 +90,7 @@ const Dashboard = () => {
       {exercises.length > 0 && (
         <div>
           <ExerciseCardList exercises={exercises} addSet={addSet} />
-          {/* <HeatMap exercises={exercises} /> */}
+          <HeatMap exercises={exercises} />
         </div>
       )}
     </div>
