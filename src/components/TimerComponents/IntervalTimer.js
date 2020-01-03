@@ -46,7 +46,6 @@ class Timer extends Component {
   }
 
   render() {
-    const { count } = this.state;
     return (
       <div className="container">
         <h2 className="text-center">Time left</h2>
