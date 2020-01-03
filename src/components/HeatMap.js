@@ -22,14 +22,17 @@ export default function({ exercises }) {
   convertDates.forEach(exercise => {
     if (Object.keys(exercisesHash).includes(exercise.created_at)) {
       exercisesHash[exercise.created_at].total += exercise.sets * exercise.reps;
+      exercisesHash[exercise.created_at].exercises = [
+        ...exercisesHash[exercise.created_at].exercises,
+        exercise
+      ];
     } else {
       exercisesHash[exercise.created_at] = {
-        total: exercise.sets * exercise.reps
+        total: exercise.sets * exercise.reps,
+        exercises: [exercise]
       };
     }
   });
-
-  console.log(exercisesHash);
 
   Object.keys(exercisesHash).forEach(element => {
     const date = new Date(element);
@@ -38,11 +41,9 @@ export default function({ exercises }) {
       month: date.getMonth(),
       day: date.getDay(),
       week: Math.floor(date.getDay() / 7 + 1),
-      weekofYear: (date.getMonth() + 1) * Math.floor(date.getDay() / 7 + 1)
+      weekOfYear: (date.getMonth() + 1) * Math.floor(date.getDay() / 7 + 1)
     };
   });
-
-  console.log(exercisesHash);
 
   const heatMapData = {
     Sun: [],
@@ -56,15 +57,26 @@ export default function({ exercises }) {
 
   for (let a in exercisesHash) {
     heatMapData[Object.keys(heatMapData)[exercisesHash[a].day]].splice(
-      exercisesHash[a].weekofYear - 1,
+      exercisesHash[a].weekOfYear - 1,
       0,
       exercisesHash[a].total
     );
   }
 
-  console.log(heatMapData);
-
   const xLabels = new Array(8).fill(0).map((_, i) => `${i}`);
+  const displayData = (x, y) => {
+    for (let a in exercisesHash) {
+      if (exercisesHash[a].day === y && exercisesHash[a].weekOfYear === x + 1) {
+        return exercisesHash[a].exercises
+          .map(b => {
+            return `${b.sets} Sets of ${b.reps} ${b.type}\n`;
+          })
+          .join("");
+      }
+    }
+  };
+
+  const clickHandler = (x, y) => alert(displayData(x, y));
 
   // Display only even labels
   const xLabelsVisibility = new Array(7)
@@ -76,7 +88,6 @@ export default function({ exercises }) {
 
   Object.keys(heatMapData).map((day, i) => (data[i] = heatMapData[day]));
 
-  console.log(data);
   return (
     <div>
       <HeatMap
@@ -86,12 +97,11 @@ export default function({ exercises }) {
         xLabelsVisibility={xLabelsVisibility}
         xLabelWidth={60}
         data={data}
-        squares
-        onClick={(x, y) => alert(`Clicked ${x}, ${y}`)}
+        squares={true}
+        onClick={(x, y) => clickHandler(x, y)}
         cellStyle={(background, value, min, max, data, x, y) => ({
-          background: `rgb(0, 151, 230, ${1 - (max - value) / (max - min)})`,
-          fontSize: "11.5px",
-          color: "#000"
+          background: `rgb(236, 96, 51, ${1 - (max - value) / max})`,
+          fontSize: "11.5px"
         })}
         cellRender={value => value && `${value}`}
       />
