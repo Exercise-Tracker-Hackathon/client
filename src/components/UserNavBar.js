@@ -12,7 +12,7 @@ const UserNavBar = ({ logOut }) => {
         justifyContent: "space-between",
         alignItems: "center",
         flexWrap: "wrap",
-        maxWidth: "1200px",
+        maxWidth: "1400px",
         margin: "0 auto"
       }}
     >
@@ -28,7 +28,14 @@ const UserNavBar = ({ logOut }) => {
           <Logo /> pumpodoro
         </h3>
       </NavLink>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          flex: 2,
+          justifyContent: "space-around",
+          alignItems: "center"
+        }}
+      >
         <Timer />
         <button>Add Exercise</button>
         <button onClick={logOut}>Logout</button>

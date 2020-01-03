@@ -56,10 +56,10 @@ const Timer = () => {
   seconds = seconds < 10 ? `0${seconds}` : seconds;
   return (
     <>
-      <div className="btn-container">
+      <div className="timer-container">
         {isRunning ? null : (
-          <label htmlFor="time">
-            Start a Timer
+          <>
+            <label htmlFor="time">Start a Timer</label>
             <input
               onChange={updateTime}
               name="time"
@@ -67,7 +67,7 @@ const Timer = () => {
               type="number"
               value={time / 60}
             />
-          </label>
+          </>
         )}
 
         <button onClick={toggleTimer} className="btn btn--blue start">
