@@ -1,36 +1,59 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
+import Timer from "./Timer";
 import Logo from "./Logo.js";
 
 const UserNavBar = ({ logOut }) => {
   return (
     <nav
       style={{
-        padding: "0 15px",
+        padding: "15px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         flexWrap: "wrap",
-        maxWidth: "1200px",
         margin: "0 auto"
       }}
     >
-      <NavLink to="/profile">
+      <NavLink to="/" style={{ textDecoration: "none" }}>
         <h3
           style={{
             margin: "0",
             display: "flex",
             alignItems: "center",
-            color: "#A33A18"
+            color: "#A33A18",
+            fontFamily: "Actor, sans-serif"
           }}
         >
           <Logo /> pumpodoro
         </h3>
       </NavLink>
+
+      <div
+        style={{
+          display: "flex",
+          flex: 2,
+          justifyContent: "space-around",
+          alignItems: "center"
+        }}
+      >
+        <Timer />
+      </div>
+
       <div>
-        <button>Start a Timer</button>
-        <button>Add Exercise</button>
-        <button onClick={logOut}>Logout</button>
+        <Button
+          href="/profile"
+          style={{ background: "none", border: "none", color: "#9F9F9F" }}
+        >
+          Dashboard
+        </Button>
+        <Button
+          onClick={logOut}
+          style={{ background: "none", border: "none", color: "#9F9F9F" }}
+        >
+          Logout
+        </Button>
       </div>
     </nav>
   );

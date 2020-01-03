@@ -2,19 +2,94 @@ import React from "react";
 import HeatMap from "react-heatmap-grid";
 
 export default function({ exercises }) {
-  const xLabels = new Array(7).fill(0).map((_, i) => `${i}`);
+  const convertDates = exercises.map(exercise => {
+    let date = new Date(exercise.created_at);
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let dt = date.getDate();
+
+    if (dt < 10) {
+      dt = "0" + dt;
+    }
+    if (month < 10) {
+      month = "0" + month;
+    }
+    return { ...exercise, created_at: year + "/" + month + "/" + dt };
+  });
+
+  let exercisesHash = {};
+
+  convertDates.forEach(exercise => {
+    if (Object.keys(exercisesHash).includes(exercise.created_at)) {
+      exercisesHash[exercise.created_at].total += exercise.sets * exercise.reps;
+      exercisesHash[exercise.created_at].exercises = [
+        ...exercisesHash[exercise.created_at].exercises,
+        exercise
+      ];
+    } else {
+      exercisesHash[exercise.created_at] = {
+        total: exercise.sets * exercise.reps,
+        exercises: [exercise]
+      };
+    }
+  });
+
+  Object.keys(exercisesHash).forEach(element => {
+    const date = new Date(element);
+    exercisesHash[element] = {
+      ...exercisesHash[element],
+      month: date.getMonth(),
+      day: date.getDay(),
+      week: Math.floor(date.getDay() / 7 + 1),
+      weekOfYear: (date.getMonth() + 1) * Math.floor(date.getDay() / 7 + 1)
+    };
+  });
+
+  const heatMapData = {
+    Sun: [],
+    Mon: [],
+    Tue: [],
+    Wed: [],
+    Thu: [],
+    Fri: [],
+    Sat: []
+  };
+
+  for (let a in exercisesHash) {
+    heatMapData[Object.keys(heatMapData)[exercisesHash[a].day]].splice(
+      exercisesHash[a].weekOfYear - 1,
+      0,
+      exercisesHash[a].total
+    );
+  }
+
+  const xLabels = new Array(8).fill(0).map((_, i) => `${i}`);
+  const displayData = (x, y) => {
+    for (let a in exercisesHash) {
+      if (exercisesHash[a].day === y && exercisesHash[a].weekOfYear === x + 1) {
+        return exercisesHash[a].exercises
+          .map(b => {
+            return `${b.sets} Sets of ${b.reps} ${b.type}\n`;
+          })
+          .join("");
+      }
+    }
+  };
+
+  const clickHandler = (x, y) => {
+    if (displayData(x, y)) {
+      alert(displayData(x, y));
+    }
+  };
 
   // Display only even labels
-  const xLabelsVisibility = new Array(7)
-    .fill(0)
-    .map((_, i) => (i % 2 === 0 ? true : false));
+  const xLabelsVisibility = new Array(8).fill(0).map((_, i) => false);
 
-  const yLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const data = new Array(yLabels.length)
-    .fill(0)
-    .map(() => exercises.map(exercise => exercise.sets * exercise.reps));
+  const yLabels = ["Sun", "", "", "Wed", "", "", "Sat"];
+  let data = new Array(yLabels.length).fill(0);
 
-  console.log(data);
+  Object.keys(heatMapData).map((day, i) => (data[i] = heatMapData[day]));
+
   return (
     <div>
       <HeatMap
@@ -24,14 +99,14 @@ export default function({ exercises }) {
         xLabelsVisibility={xLabelsVisibility}
         xLabelWidth={60}
         data={data}
-        squares
-        onClick={(x, y) => alert(`Clicked ${x}, ${y}`)}
+        squares={true}
+        onClick={(x, y) => clickHandler(x, y)}
         cellStyle={(background, value, min, max, data, x, y) => ({
-          background: `rgb(0, 151, 230, ${1 - (max - value) / (max - min)})`,
-          fontSize: "11.5px",
-          color: "#000"
+          background: value
+            ? `rgb(236, 96, 51, ${1 - (max - value) / max})`
+            : "#E8E8E8",
+          fontSize: "11.5px"
         })}
-        cellRender={value => value && `${value}%`}
       />
     </div>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import titleImg from "../assets/pumpordo-logo.png";
 import heart from "../assets/heartbeat.svg";
@@ -64,7 +63,7 @@ const LandingPage = () => {
             src={man}
             alt="man lifting weights"
             style={{
-              height: "167px",
+              height: "200px",
               alignSelf: "flex-end",
               margin: "20px 0 0 0"
             }}
@@ -73,7 +72,7 @@ const LandingPage = () => {
             src={woman}
             alt="woman lifting weights"
             style={{
-              height: "157px",
+              height: "177px",
               alignSelf: "flex-start",
               margin: "0 0 0 20px"
             }}
@@ -95,14 +94,14 @@ const LandingPage = () => {
       </p>
 
       <div className="benefits">
-        <section style={{ marginRight: "120px" }}>
+        <section style={{ marginRight: "5%" }}>
           <img src={heart} alt="heart" style={{ width: "171px" }} />
           <p>
             High intensity exercise for 5-10 minutes can provide the same
             cardiovascular benefit as 45 minutes of moderate exercise.
           </p>
         </section>
-        <section style={{ marginRight: "120px" }}>
+        <section style={{ marginRight: "5%" }}>
           <img
             src={brain}
             alt="brain"

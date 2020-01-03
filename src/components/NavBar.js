@@ -17,32 +17,35 @@ const NavBar = props => {
     return (
       <nav
         style={{
-          padding: "0 15px",
+          padding: "15px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
-          maxWidth: "1200px",
           margin: "0 auto"
         }}
       >
-        <NavLink to="/">
+        <NavLink to="/" style={{ textDecoration: "none" }}>
           <h3
             style={{
               margin: "0",
               display: "flex",
               alignItems: "center",
-              color: "#A33A18"
+              color: "#A33A18",
+              fontFamily: "Actor, sans-serif"
             }}
           >
             <Logo /> pumpodoro
           </h3>
         </NavLink>
         <div>
-          <NavLink style={{ margin: "0 10px" }} to="/login">
+          <NavLink style={{ margin: "0 10px", color: "#9F9F9F" }} to="/login">
             Login
           </NavLink>
-          <NavLink style={{ margin: "0 10px" }} to="/register">
+          <NavLink
+            style={{ margin: "0 10px", color: "#9F9F9F" }}
+            to="/register"
+          >
             Register
           </NavLink>
         </div>
