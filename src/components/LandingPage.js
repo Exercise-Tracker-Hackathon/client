@@ -8,7 +8,6 @@ import productivity from "../assets/profits.svg";
 import man from "../assets/man.svg";
 import woman from "../assets/woman.svg";
 import "../styles/LandingPage.css";
-import TimerInput from "./TimerComponents/TimerInput";
 import Timer from "./TimerComponents/IntervalTimer";
 
 const LandingPage = () => {
@@ -127,7 +126,6 @@ const LandingPage = () => {
           </p>
         </section>
       </div>
-      <TimerInput />
       <Timer />
     </div>
   );
