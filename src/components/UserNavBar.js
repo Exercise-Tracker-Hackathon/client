@@ -16,25 +16,28 @@ const UserNavBar = ({ logOut }) => {
         margin: "0 auto"
       }}
     >
-      <NavLink to="/">
+      <NavLink to="/" style={{ textDecoration: "none" }}>
         <h3
           style={{
             margin: "0",
             display: "flex",
             alignItems: "center",
-            color: "#A33A18"
+            color: "#A33A18",
+            fontFamily: "Actor, sans-serif"
           }}
         >
           <Logo /> pumpodoro
         </h3>
       </NavLink>
       <div>
-        <Button style={{ background: "none", border: "none", color: "gray" }}>
+        <Button
+          style={{ background: "none", border: "none", color: "#9F9F9F" }}
+        >
           Start a Timer
         </Button>
         <Button
           href="/profile"
-          style={{ background: "none", border: "none", color: "gray" }}
+          style={{ background: "none", border: "none", color: "#9F9F9F" }}
         >
           Go to Dashboard
         </Button>

@@ -25,13 +25,14 @@ const NavBar = props => {
           margin: "0 auto"
         }}
       >
-        <NavLink to="/">
+        <NavLink to="/" style={{ textDecoration: "none" }}>
           <h3
             style={{
               margin: "0",
               display: "flex",
               alignItems: "center",
-              color: "#A33A18"
+              color: "#A33A18",
+              fontFamily: "Actor, sans-serif"
             }}
           >
             <Logo /> pumpodoro
