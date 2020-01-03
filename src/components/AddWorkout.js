@@ -3,7 +3,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const AddWorkout = ({ handleClose }) => {
+const AddWorkout = ({ handleClose, addExercise }) => {
   const [exercise, setExercise] = React.useState({
     type: "",
     reps: 0
@@ -24,6 +24,7 @@ const AddWorkout = ({ handleClose }) => {
       ...exercise,
       user_id: localStorage.getItem("user_id")
     });
+    addExercise();
     handleClose();
   };
 

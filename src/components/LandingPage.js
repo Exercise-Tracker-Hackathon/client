@@ -1,18 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Timer from "./IntervalTimer";
 
 const LandingPage = () => {
   return (
-    <div>
-      <h2>Pumpodoro Landing Page</h2>
+    <div className="landingPage">
+      <h2>Welcome to Pumpodoro!</h2>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam
-        recusandae dicta rem incidunt atque consectetur nisi enim non porro at.
-        Saepe necessitatibus temporibus iusto atque accusamus odit inventore
-        debitis harum!
+        Pumpodoro is a desktop app designed to help officer workers get active.
+        It is simple to use set your timer then when the time is up Pumpodoro
+        will send you and notification to get up, and get active. Log your
+        exercise and the reps you have completed. Can you beat your PR?
+        Pumpodora keeps track of your best exercises to motivate you to push
+        further, and see your progress.
       </p>
-      <Link to="/login">Login</Link>
-      <Link to="/register">Sign Up</Link>
+      <Timer />
+      <Link className="login" to="/login">
+        Login
+      </Link>
+      <Link className="signup" to="/register">
+        Sign Up
+      </Link>
     </div>
   );
 };

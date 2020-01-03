@@ -22,7 +22,7 @@ const SignupForm = props => {
       .post(`/auth/register`, credentials)
       .then(res => {
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user", res.data.user);
+        localStorage.setItem("user_id", res.data.saved.id);
 
         props.history.push("/profile");
       })
