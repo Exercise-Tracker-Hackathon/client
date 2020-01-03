@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Button from "react-bootstrap/Button";
+import play from "../assets/play.svg";
+import stop from "../assets/stop.svg";
 
 const Timer = () => {
   const [time, setTime] = useState(1200);
@@ -86,7 +87,6 @@ const Timer = () => {
               className="current-time"
               style={{
                 fontSize: "20px",
-                margin: "0 10px",
                 border: "1px solid #9F9F9F",
                 padding: "6px",
                 borderRadius: "3px"
@@ -97,28 +97,19 @@ const Timer = () => {
           </span>
         ) : null}
         {isRunning ? (
-          <Button
+          <img
+            src={stop}
+            alt="stop button"
             onClick={toggleTimer}
-            style={{
-              background: "none",
-              border: "1px solid #A33A18",
-              color: "#A33A18"
-            }}
-          >
-            Stop
-          </Button>
+            style={{ cursor: "pointer" }}
+          />
         ) : (
-          <Button
+          <img
+            src={play}
+            alt="play button"
             onClick={toggleTimer}
-            style={{
-              background: "#6BB48C",
-              border: "none",
-              color: "#fff",
-              marginLeft: "5px"
-            }}
-          >
-            Start
-          </Button>
+            style={{ cursor: "pointer" }}
+          />
         )}
       </div>
     </>
