@@ -9,9 +9,9 @@ import ExerciseCardList from "./ExerciseCardList";
 
 const Dashboard = () => {
   const [exercises, setExercises] = useState([]);
+  const [addedSet, setAddedSet] = useState(false);
   const [show, setShow] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [addedSet, setAddedSet] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -42,13 +42,20 @@ const Dashboard = () => {
         </Modal.Body>
       </Modal>
       {exercises.length === 0 && (
-        <>
-          <p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            margin: "100px 0 0 0"
+          }}
+        >
+          <p style={{ fontSize: "24px", fontFamily: "Actor, sans-serif" }}>
             You don’t have any workouts yet. <br /> Create a workout to get
             started.
           </p>
           <img src={logo} alt="logo" style={{ opacity: 0.5 }} />
-        </>
+        </div>
       )}
       {exercises.length > 0 && (
         <>

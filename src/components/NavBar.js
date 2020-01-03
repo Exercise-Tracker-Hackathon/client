@@ -17,12 +17,11 @@ const NavBar = props => {
     return (
       <nav
         style={{
-          padding: "0 15px",
+          padding: "15px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
-          maxWidth: "1200px",
           margin: "0 auto"
         }}
       >
@@ -39,10 +38,13 @@ const NavBar = props => {
           </h3>
         </NavLink>
         <div>
-          <NavLink style={{ margin: "0 10px" }} to="/login">
+          <NavLink style={{ margin: "0 10px", color: "#9F9F9F" }} to="/login">
             Login
           </NavLink>
-          <NavLink style={{ margin: "0 10px" }} to="/register">
+          <NavLink
+            style={{ margin: "0 10px", color: "#9F9F9F" }}
+            to="/register"
+          >
             Register
           </NavLink>
         </div>

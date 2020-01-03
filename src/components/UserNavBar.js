@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
+import AddWorkout from "./AddWorkout";
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo.js";
 
@@ -11,11 +13,10 @@ const UserNavBar = ({ logOut }) => {
         justifyContent: "space-between",
         alignItems: "center",
         flexWrap: "wrap",
-        maxWidth: "1200px",
         margin: "0 auto"
       }}
     >
-      <NavLink to="/profile">
+      <NavLink to="/">
         <h3
           style={{
             margin: "0",
@@ -28,9 +29,21 @@ const UserNavBar = ({ logOut }) => {
         </h3>
       </NavLink>
       <div>
-        <button>Start a Timer</button>
-        <button>Add Exercise</button>
-        <button onClick={logOut}>Logout</button>
+        <Button style={{ background: "none", border: "none", color: "gray" }}>
+          Start a Timer
+        </Button>
+        <Button
+          href="/profile"
+          style={{ background: "none", border: "none", color: "gray" }}
+        >
+          Go to Dashboard
+        </Button>
+        <Button
+          onClick={logOut}
+          style={{ background: "none", border: "none", color: "gray" }}
+        >
+          Logout
+        </Button>
       </div>
     </nav>
   );
