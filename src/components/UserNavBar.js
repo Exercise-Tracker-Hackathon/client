@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import AddWorkout from "./AddWorkout";
 import { NavLink } from "react-router-dom";
+import Timer from "./Timer";
 import Logo from "./Logo.js";
 
 const UserNavBar = ({ logOut }) => {
@@ -29,6 +30,7 @@ const UserNavBar = ({ logOut }) => {
           <Logo /> pumpodoro
         </h3>
       </NavLink>
+
       <div>
         <Button
           style={{ background: "none", border: "none", color: "#9F9F9F" }}
@@ -47,6 +49,18 @@ const UserNavBar = ({ logOut }) => {
         >
           Logout
         </Button>
+
+      <div
+        style={{
+          display: "flex",
+          flex: 2,
+          justifyContent: "space-around",
+          alignItems: "center"
+        }}
+      >
+        <Timer />
+        <button onClick={logOut}>Logout</button>
+
       </div>
     </nav>
   );
