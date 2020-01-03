@@ -20,12 +20,18 @@ const AddWorkout = ({ handleClose, addExercise }) => {
     e.preventDefault();
     let { reps } = exercise;
     reps = parseInt(reps);
-    axiosWithAuth().post("https://pumpodoro.herokuapp.com/api/exercises", {
-      ...exercise,
-      user_id: localStorage.getItem("user_id")
-    });
-    addExercise();
-    handleClose();
+    axiosWithAuth()
+      .post("https://pumpodoro.herokuapp.com/api/exercises", {
+        ...exercise,
+        user_id: localStorage.getItem("user_id")
+      })
+      .then(() => {
+        addExercise();
+        handleClose();
+      })
+      .catch(err => {
+        console.error(err);
+      });
   };
 
   return (

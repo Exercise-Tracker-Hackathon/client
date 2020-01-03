@@ -33,7 +33,8 @@ const ExerciseCardList = ({ exercises, addSet }) => {
       style={{
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
+        marginBottom: "30px"
       }}
     >
       {filteredExercises.map((exercise, index) => (

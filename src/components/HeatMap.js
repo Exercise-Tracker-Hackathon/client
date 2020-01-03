@@ -76,14 +76,16 @@ export default function({ exercises }) {
     }
   };
 
-  const clickHandler = (x, y) => alert(displayData(x, y));
+  const clickHandler = (x, y) => {
+    if (displayData(x, y)) {
+      alert(displayData(x, y));
+    }
+  };
 
   // Display only even labels
-  const xLabelsVisibility = new Array(7)
-    .fill(0)
-    .map((_, i) => (i % 2 === 0 ? true : false));
+  const xLabelsVisibility = new Array(8).fill(0).map((_, i) => false);
 
-  const yLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const yLabels = ["Sun", "", "", "Wed", "", "", "Sat"];
   let data = new Array(yLabels.length).fill(0);
 
   Object.keys(heatMapData).map((day, i) => (data[i] = heatMapData[day]));
@@ -100,10 +102,11 @@ export default function({ exercises }) {
         squares={true}
         onClick={(x, y) => clickHandler(x, y)}
         cellStyle={(background, value, min, max, data, x, y) => ({
-          background: `rgb(236, 96, 51, ${1 - (max - value) / max})`,
+          background: value
+            ? `rgb(236, 96, 51, ${1 - (max - value) / max})`
+            : "#E8E8E8",
           fontSize: "11.5px"
         })}
-        cellRender={value => value && `${value}`}
       />
     </div>
   );
