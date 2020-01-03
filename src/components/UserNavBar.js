@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import AddWorkout from "./AddWorkout";
 import { NavLink } from "react-router-dom";
 import Timer from "./Timer";
 import Logo from "./Logo.js";
@@ -49,7 +48,7 @@ const UserNavBar = ({ logOut }) => {
         >
           Logout
         </Button>
-
+      </div>
       <div
         style={{
           display: "flex",
@@ -60,7 +59,6 @@ const UserNavBar = ({ logOut }) => {
       >
         <Timer />
         <button onClick={logOut}>Logout</button>
-
       </div>
     </nav>
   );
