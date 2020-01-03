@@ -38,7 +38,9 @@ const Dashboard = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "flex-start"
+        padding: "0 50px",
+        margin: "0 auto",
+        width: "90%"
       }}
     >
       <Button

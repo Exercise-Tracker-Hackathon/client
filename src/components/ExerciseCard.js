@@ -18,14 +18,16 @@ const ExerciseCard = ({ exercise, addSet }) => {
   return (
     <Card
       style={{
-        width: "245px",
+        minWidth: "245px",
+        width: "20%",
         background: "#FFEBE4",
         border: "none",
-        borderRadius: "5px"
+        borderRadius: "5px",
+        margin: "15px"
       }}
     >
       <Card.Body style={{ display: "flex", justifyContent: "space-between" }}>
-        <Card.Text style={{}}>
+        <Card.Text>
           {exercise.reps} {exercise.type}
           <br />
           {exercise.sets} sets
