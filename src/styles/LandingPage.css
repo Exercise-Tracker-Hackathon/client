@@ -1,5 +1,6 @@
 .landing-page .main-hero {
   background: #ffebe4;
+  background: none;
   min-width: 100%;
   display: flex;
   flex-direction: column;
@@ -18,7 +19,7 @@
 
 .landing-page .about-section {
   background: #ec6033;
-  width: 75%;
+  width: 85%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 50px 100px;
@@ -35,7 +36,7 @@
 
 .landing-page .about-section .image-ctr {
   background: #fff;
-  width: 35%;
+  width: 42%;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
