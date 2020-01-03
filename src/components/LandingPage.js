@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Timer from "./IntervalTimer";
+import Timer from "./TimerComponents/IntervalTimer";
 
 const LandingPage = () => {
   return (

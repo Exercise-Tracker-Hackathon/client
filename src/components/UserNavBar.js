@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo.js";
 
-const UserNavBar = () => {
+const UserNavBar = ({ logOut }) => {
   return (
     <nav
       style={{
@@ -28,15 +28,9 @@ const UserNavBar = () => {
         </h3>
       </NavLink>
       <div>
-        <NavLink style={{ margin: "0 10px" }} to="/login">
-          Start a Timer
-        </NavLink>
-        <NavLink style={{ margin: "0 10px" }} to="/register">
-          Register
-        </NavLink>
-        <NavLink style={{ margin: "0 0 0 10px" }} to="/profile">
-          Dashboard
-        </NavLink>
+        <button>Start a Timer</button>
+        <button>Add Exercise</button>
+        <button onClick={logOut}>Logout</button>
       </div>
     </nav>
   );
