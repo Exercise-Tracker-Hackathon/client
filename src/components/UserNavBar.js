@@ -30,12 +30,18 @@ const UserNavBar = ({ logOut }) => {
         </h3>
       </NavLink>
 
+      <div
+        style={{
+          display: "flex",
+          flex: 2,
+          justifyContent: "space-around",
+          alignItems: "center"
+        }}
+      >
+        <Timer />
+      </div>
+
       <div>
-        <Button
-          style={{ background: "none", border: "none", color: "#9F9F9F" }}
-        >
-          Start a Timer
-        </Button>
         <Button
           href="/profile"
           style={{ background: "none", border: "none", color: "#9F9F9F" }}
@@ -48,17 +54,6 @@ const UserNavBar = ({ logOut }) => {
         >
           Logout
         </Button>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flex: 2,
-          justifyContent: "space-around",
-          alignItems: "center"
-        }}
-      >
-        <Timer />
-        <button onClick={logOut}>Logout</button>
       </div>
     </nav>
   );
