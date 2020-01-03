@@ -65,7 +65,7 @@ const LandingPage = () => {
             src={man}
             alt="man lifting weights"
             style={{
-              height: "167px",
+              height: "200px",
               alignSelf: "flex-end",
               margin: "20px 0 0 0"
             }}
@@ -74,7 +74,7 @@ const LandingPage = () => {
             src={woman}
             alt="woman lifting weights"
             style={{
-              height: "157px",
+              height: "177px",
               alignSelf: "flex-start",
               margin: "0 0 0 20px"
             }}
