@@ -8505,6 +8505,11 @@ react-error-overlay@^6.0.4:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.4.tgz#0d165d6d27488e660bc08e57bdabaad741366f7a"
   integrity sha512-ueZzLmHltszTshDMwyfELDq8zOA803wQ1ZuzCccXa1m57k1PxSHfflPD5W9YIiTXLs0JTLzoj6o1LuM5N6zzNA==
 
+react-heatmap-grid@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/react-heatmap-grid/-/react-heatmap-grid-0.8.1.tgz#ab24e425534b7dbec58d41c3abdf9e7e7edc6a02"
+  integrity sha512-reDkqNwfzcUCZlpp1ld2IRakmbDqSNuhY3EQ0eeDUP/xe6siwagyM4fCN+OFZyeWSlyFVfeq6LuQITbo5zvbdw==
+
 react-is@^16.3.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"

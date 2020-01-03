@@ -4,6 +4,7 @@ import UserNavBar from "./UserNavBar";
 import Logo from "./Logo.js";
 
 const NavBar = props => {
+  console.log(props.isLoggedIn);
   const logOut = e => {
     localStorage.clear();
     props.setIsLoggedIn(false);
@@ -43,9 +44,6 @@ const NavBar = props => {
           </NavLink>
           <NavLink style={{ margin: "0 10px" }} to="/register">
             Register
-          </NavLink>
-          <NavLink style={{ margin: "0 0 0 10px" }} to="/profile">
-            Dashboard
           </NavLink>
         </div>
       </nav>

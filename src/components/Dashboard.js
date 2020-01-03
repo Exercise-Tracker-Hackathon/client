@@ -5,6 +5,7 @@ import AddWorkout from "./AddWorkout";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import logo from "../assets/pumpordo-logo.png";
 import ExerciseCardList from "./ExerciseCardList";
+// import HeatMap from "./HeatMap";
 
 const Dashboard = () => {
   const [exercises, setExercises] = useState([]);
@@ -41,19 +42,24 @@ const Dashboard = () => {
         </Modal.Body>
       </Modal>
       {exercises.length === 0 && (
-        <p>
-          You don’t have any workouts yet. <br /> Create a workout to get
-          started.
-        </p>
+        <>
+          <p>
+            You don’t have any workouts yet. <br /> Create a workout to get
+            started.
+          </p>
+          <img src={logo} alt="logo" style={{ opacity: 0.5 }} />
+        </>
       )}
       {exercises.length > 0 && (
-        <ExerciseCardList exercises={exercises} addSet={addSet} />
+        <>
+          <ExerciseCardList exercises={exercises} addSet={addSet} />
+          {/* <HeatMap exercises={exercises} /> */}
+        </>
       )}
 
       <Button variant="primary" onClick={handleShow}>
         Add Exercise Routine
       </Button>
-      <img src={logo} alt="logo" style={{ opacity: 0.5 }} />
     </div>
   );
 };

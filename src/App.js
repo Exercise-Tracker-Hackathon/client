@@ -12,6 +12,13 @@ import "./App.css";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
+  const token = localStorage.getItem("token");
+  React.useEffect(() => {
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, [token]);
+
   return (
     <Router>
       <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
@@ -20,7 +27,10 @@ function App() {
           path="/login"
           render={props => <Login {...props} setIsLoggedIn={setIsLoggedIn} />}
         />
-        <Route path="/register" component={SignUp} />
+        <Route
+          path="/register"
+          render={props => <SignUp {...props} setIsLoggedIn={setIsLoggedIn} />}
+        />
         <PrivateRoute path="/profile" component={Dashboard} />
       </Layout>
     </Router>
