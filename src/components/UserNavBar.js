@@ -2,12 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo.js";
 
-const NavBar = () => {
-  React.useEffect(() => {
-    const id = localStorage.getItem("token");
-    console.log(id);
-  }, []);
-
+const UserNavBar = () => {
   return (
     <nav
       style={{
@@ -34,7 +29,7 @@ const NavBar = () => {
       </NavLink>
       <div>
         <NavLink style={{ margin: "0 10px" }} to="/login">
-          Login
+          Start a Timer
         </NavLink>
         <NavLink style={{ margin: "0 10px" }} to="/register">
           Register
@@ -47,4 +42,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default UserNavBar;

@@ -1,54 +1,40 @@
-import React, { useState } from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import React from "react";
+import SignupForm from "./SignupForm.js";
+import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
-const Signup = props => {
-  const [credentials, setCredentials] = useState({
-    email: "",
-    password: ""
-  });
-
-  const handleChange = e => {
-    setCredentials({
-      ...credentials,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    axiosWithAuth()
-      .post(`/register`, credentials)
-      .then(res => {
-        props.history.push("/profile");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    setCredentials({ email: "", password: "" });
-  };
-
+const SignUp = props => {
   return (
     <div>
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input
-          onChange={handleChange}
-          value={credentials.email}
-          type="email"
-          name="email"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={handleChange}
-          value={credentials.password}
-          type="password"
-          name="password"
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+      <h1>Get Pumped!!</h1>
+      <p>Create your Pumpodoro account.</p>
+      <Card style={{ padding: "2rem" }}>
+        <Card style={{ margin: "2rem", padding: "2rem" }}>
+          <SignupForm {...props} />
+        </Card>
+        <p>Already have an account?</p>
+        <Link
+          to="/login"
+          style={{
+            width: "fit-content",
+            textDecoration: "none",
+            borderRadius: ".25rem",
+            display: "inline-block",
+            fontWeight: "400",
+            textAlign: "center",
+            verticalAlign: "middle",
+            border: "1px solid #EC6033",
+            color: "black",
+            padding: ".375rem .75rem",
+            fontSize: "1rem",
+            lineHeight: "1.5"
+          }}
+        >
+          Log in here
+        </Link>
+      </Card>
     </div>
   );
 };
 
-export default Signup;
+export default SignUp;

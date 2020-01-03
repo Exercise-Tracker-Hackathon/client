@@ -1,53 +1,38 @@
-import React, { useState } from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import React from "react";
+import LoginForm from "./LoginForm.js";
+import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 const Login = props => {
-  const [credentials, setCredentials] = useState({
-    email: "",
-    password: ""
-  });
-
-  const handleChange = e => {
-    setCredentials({
-      ...credentials,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    axiosWithAuth()
-      .post(`/login`, credentials)
-      .then(res => {
-        localStorage.setItem("token", res.data.token);
-        props.history.push("/");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    setCredentials({ email: "", password: "" });
-  };
-
   return (
     <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input
-          onChange={handleChange}
-          value={credentials.name}
-          type="email"
-          name="email"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={handleChange}
-          value={credentials.password}
-          type="password"
-          name="password"
-        />
-        <button type="submit">Login</button>
-      </form>
+      <h1>Get Pumped!</h1>
+      <p>Log in to your Pumpodoro account.</p>
+      <Card style={{ padding: "2rem" }}>
+        <Card style={{ margin: "2rem", padding: "2rem" }}>
+          <LoginForm {...props} />
+        </Card>
+        <p>Don't have an account yet?</p>
+        <Link
+          to="/register"
+          style={{
+            width: "fit-content",
+            textDecoration: "none",
+            borderRadius: ".25rem",
+            display: "inline-block",
+            fontWeight: "400",
+            textAlign: "center",
+            verticalAlign: "middle",
+            border: "1px solid #EC6033",
+            color: "black",
+            padding: ".375rem .75rem",
+            fontSize: "1rem",
+            lineHeight: "1.5"
+          }}
+        >
+          Sign up for free
+        </Link>
+      </Card>
     </div>
   );
 };
