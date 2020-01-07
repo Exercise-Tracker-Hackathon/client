@@ -20,6 +20,10 @@ const Dashboard = () => {
   const addSet = () => setAddedSet(!addedSet);
 
   useEffect(() => {
+    fetchUser();
+  }, [submitted, addedSet]);
+
+  const fetchUser = () => {
     const userId = localStorage.getItem("user_id");
 
     axiosWithAuth()
@@ -30,7 +34,7 @@ const Dashboard = () => {
       .catch(err => {
         console.error(err);
       });
-  }, [submitted, addedSet]);
+  };
 
   return (
     <div
@@ -115,7 +119,11 @@ const Dashboard = () => {
       )}
       {exercises.length > 0 && (
         <div style={{ width: "95%" }}>
-          <ExerciseCardList exercises={exercises} addSet={addSet} />
+          <ExerciseCardList
+            exercises={exercises}
+            addSet={addSet}
+            fetchUser={fetchUser}
+          />
           <HeatMap exercises={exercises} />
         </div>
       )}

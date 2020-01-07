@@ -6,7 +6,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import repsButton from "../assets/button.svg";
 import { FaEllipsisV } from "react-icons/fa";
 
-const ExerciseCard = ({ exercise, addSet }) => {
+const ExerciseCard = ({ exercise, addSet, fetchUser }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -20,6 +20,18 @@ const ExerciseCard = ({ exercise, addSet }) => {
       })
       .catch(err => {
         console.log(err);
+      });
+  };
+
+  const handleDelete = () => {
+    axiosWithAuth()
+      .delete(`/exercises/${exercise.id}`)
+      .then(res => {
+        fetchUser();
+        handleClose();
+      })
+      .catch(err => {
+        console.log({ err });
       });
   };
 
@@ -82,7 +94,7 @@ const ExerciseCard = ({ exercise, addSet }) => {
           </Button>
           <Button
             variant="light"
-            onClick={handleClose}
+            onClick={handleDelete}
             style={{ background: "#EC6033", color: "#fff" }}
           >
             Yes, delete
