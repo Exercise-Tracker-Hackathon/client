@@ -32,7 +32,7 @@ const ExerciseCardList = ({ exercises, addSet }) => {
       style={{
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-evenly",
+        justifyContent: "flex-start",
         marginBottom: "30px"
       }}
     >

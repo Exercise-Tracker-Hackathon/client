@@ -38,31 +38,51 @@ const Dashboard = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "0 50px",
-        margin: "0 auto",
-        width: "90%"
+        margin: "50px auto 0 auto",
+        width: "90%",
+        maxWidth: "1600px"
       }}
     >
-      <Button
+      <div
         style={{
-          background: "none",
-          border: "1px solid #9f9f9f",
-          padding: "10px 30px",
-          margin: "15px 50px 30px 0",
-          alignSelf: "center",
-          color: "#9f9f9f",
           display: "flex",
-          alignItems: "center"
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "100%"
         }}
-        onClick={handleShow}
       >
-        <img
-          src={plus}
-          alt="plus"
-          style={{ height: "18px", margin: "0 10px 0 0" }}
-        />
-        Create an exercise
-      </Button>
+        <p
+          style={{
+            color: "#676767",
+            padding: "10px 30px",
+            fontSize: "20px",
+            fontFamily: "Roboto, sans-serif"
+          }}
+        >
+          {exercises.length > 0 ? "Today's exercises" : null}
+        </p>
+        <Button
+          variant="light"
+          style={{
+            background: "none",
+            border: "none",
+            padding: "10px 30px",
+            alignSelf: "center",
+            color: "#9f9f9f",
+            display: "flex",
+            alignItems: "center"
+          }}
+          onClick={handleShow}
+        >
+          <img
+            src={plus}
+            alt="plus"
+            style={{ height: "18px", margin: "0 10px 0 0" }}
+          />
+          Create an exercise
+        </Button>
+      </div>
+
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton style={{ border: "none" }}>
           {/* <Modal.Title>Create an exercise for today</Modal.Title> */}
@@ -80,7 +100,13 @@ const Dashboard = () => {
             margin: "100px 0 0 0"
           }}
         >
-          <p style={{ fontSize: "24px", fontFamily: "Actor, sans-serif" }}>
+          <p
+            style={{
+              fontSize: "24px",
+              fontFamily: "Actor, sans-serif",
+              color: "#9f9f9f"
+            }}
+          >
             You don’t have any exercises yet. <br /> Create an exercise to get
             started.
           </p>
@@ -88,7 +114,7 @@ const Dashboard = () => {
         </div>
       )}
       {exercises.length > 0 && (
-        <div>
+        <div style={{ width: "95%" }}>
           <ExerciseCardList exercises={exercises} addSet={addSet} />
           <HeatMap exercises={exercises} />
         </div>

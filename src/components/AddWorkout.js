@@ -19,10 +19,10 @@ const AddWorkout = ({ handleClose, addExercise }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (exercise.type === "" || exercise.reps === "") return;
+
     axiosWithAuth()
       .post("https://pumpodoro.herokuapp.com/api/exercises", {
-        ...exercise,
-        user_id: localStorage.getItem("user_id")
+        ...exercise
       })
       .then(() => {
         addExercise();
