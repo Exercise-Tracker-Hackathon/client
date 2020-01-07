@@ -14,9 +14,14 @@
 
 .timer-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 340px;
+  justify-content: flex-start;
+  width: 140px;
+  height: 63px;
   max-width: 100%;
+  background: #656565;
+  border-radius: 5px;
 }
 
 .timer-container label {
@@ -42,4 +47,16 @@
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 10px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

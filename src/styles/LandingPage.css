@@ -68,3 +68,26 @@
 .landing-page .benefits section p {
   text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+  .landing-page .about-section {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+  }
+  .landing-page .about-section .content {
+    width: 60vw;
+  }
+  .landing-page .about-section .image-ctr {
+    width: 50vw;
+    margin-right: 80px
+  }
+
+  .landing-page .benefits {
+    flex-direction: column;
+  }
+
+  .landing-page .benefits section {
+    margin: 4% 0 4% 0;
+  }
+}
