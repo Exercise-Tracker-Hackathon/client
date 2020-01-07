@@ -9,6 +9,8 @@ const Timer = () => {
   const [alarm, setAlarm] = useState(false);
 
   const updateTime = e => {
+    //requires the timer to be at least 1 minute
+    if (e.target.value <= 0) return;
     let currentTime = e.target.value;
     currentTime = currentTime * 60;
     setTime(currentTime);
