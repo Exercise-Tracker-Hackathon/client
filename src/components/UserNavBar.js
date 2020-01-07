@@ -46,12 +46,14 @@ const UserNavBar = ({ logOut }) => {
         <Button
           href="/profile"
           style={{ background: "none", border: "none", color: "#9F9F9F" }}
+          variant="light"
         >
           Dashboard
         </Button>
         <Button
           onClick={logOut}
           style={{ background: "none", border: "none", color: "#9F9F9F" }}
+          variant="light"
         >
           Logout
         </Button>
