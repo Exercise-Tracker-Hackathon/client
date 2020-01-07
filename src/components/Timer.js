@@ -125,7 +125,7 @@ const Timer = () => {
                 className="current-time"
                 style={{
                   fontSize: "20px",
-                  border: "1px solid #9F9F9F",
+                  border: "none",
                   margin: "0 5px",
                   borderRadius: "3px",
                   width: "70px",
