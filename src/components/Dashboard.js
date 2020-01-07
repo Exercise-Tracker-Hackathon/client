@@ -118,13 +118,30 @@ const Dashboard = () => {
         </div>
       )}
       {exercises.length > 0 && (
-        <div style={{ width: "95%" }}>
-          <ExerciseCardList
-            exercises={exercises}
-            addSet={addSet}
-            fetchUser={fetchUser}
-          />
-          <HeatMap exercises={exercises} />
+        <div
+          style={{
+            width: "100%",
+            minHeight: "70vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between"
+          }}
+        >
+          <div style={{ width: "95%" }}>
+            <ExerciseCardList
+              exercises={exercises}
+              addSet={addSet}
+              fetchUser={fetchUser}
+            />
+          </div>
+          <div
+            style={{
+              alignSelf: "flex-start",
+              width: "100%"
+            }}
+          >
+            <HeatMap exercises={exercises} />
+          </div>
         </div>
       )}
     </div>
