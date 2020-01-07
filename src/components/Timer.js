@@ -76,42 +76,75 @@ const Timer = () => {
       <div className="timer-container">
         {isRunning ? null : (
           <>
-            <label htmlFor="time">Start a Timer</label>
-            <input
-              onChange={updateTime}
-              name="time"
-              id="time"
-              type="number"
-              value={time / 60}
+            <label htmlFor="time" style={{ color: "#CECECE" }}>
+              Start a Timer
+            </label>
+            <div
               style={{
-                width: "70px",
-                margin: "0 5px",
-                padding: "3px",
-                fontSize: "20px",
-                textAlign: "center",
-                borderRadius: "3px",
-                border: "1px solid #9F9F9F"
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
               }}
-            />
+            >
+              <input
+                onChange={updateTime}
+                name="time"
+                id="time"
+                type="number"
+                value={time / 60}
+                style={{
+                  width: "70px",
+                  margin: "0 5px",
+                  padding: "0px",
+                  fontSize: "20px",
+                  textAlign: "center",
+                  borderRadius: "3px",
+                  border: "none"
+                }}
+              />
+              <img
+                src={play}
+                alt="play button"
+                onClick={toggleTimer}
+                style={{ cursor: "pointer", height: "30px" }}
+              />
+            </div>
           </>
         )}
         {isRunning ? (
-          <span style={{ margin: "0 5px" }}>
-            Time Remaining{" "}
-            <span
-              className="current-time"
+          <>
+            <label style={{ color: "#CECECE" }}>Time Remaining</label>
+            <div
               style={{
-                fontSize: "20px",
-                border: "1px solid #9F9F9F",
-                padding: "6px",
-                borderRadius: "3px"
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
               }}
             >
-              {minutes} : {seconds}
-            </span>
-          </span>
+              <span
+                className="current-time"
+                style={{
+                  fontSize: "20px",
+                  border: "1px solid #9F9F9F",
+                  margin: "0 5px",
+                  borderRadius: "3px",
+                  width: "70px",
+                  textAlign: "center",
+                  background: "#fff"
+                }}
+              >
+                {minutes} : {seconds}
+              </span>
+              <img
+                src={stop}
+                alt="stop button"
+                onClick={toggleTimer}
+                style={{ cursor: "pointer", height: "30px" }}
+              />
+            </div>
+          </>
         ) : null}
-        {isRunning ? (
+        {/* {isRunning ? (
           <img
             src={stop}
             alt="stop button"
@@ -125,7 +158,7 @@ const Timer = () => {
             onClick={toggleTimer}
             style={{ cursor: "pointer" }}
           />
-        )}
+        )} */}
       </div>
       <>{alarm ? alert() : null}</>
     </>
