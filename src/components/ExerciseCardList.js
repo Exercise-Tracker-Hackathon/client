@@ -1,7 +1,7 @@
 import React from "react";
 import ExerciseCard from "./ExerciseCard";
 
-const ExerciseCardList = ({ exercises, addSet }) => {
+const ExerciseCardList = ({ exercises, addSet, fetchUser }) => {
   const convertDates = exercises.map(exercise => {
     let date = new Date(exercise.created_at);
     let year = date.getFullYear();
@@ -32,12 +32,17 @@ const ExerciseCardList = ({ exercises, addSet }) => {
       style={{
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-evenly",
+        justifyContent: "flex-start",
         marginBottom: "30px"
       }}
     >
       {filteredExercises.map((exercise, index) => (
-        <ExerciseCard exercise={exercise} key={index} addSet={addSet} />
+        <ExerciseCard
+          exercise={exercise}
+          key={index}
+          addSet={addSet}
+          fetchUser={fetchUser}
+        />
       ))}
     </div>
   );
