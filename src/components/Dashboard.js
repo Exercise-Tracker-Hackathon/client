@@ -55,7 +55,7 @@ const Dashboard = () => {
           style={{
             color: "#676767",
             padding: "10px 30px",
-            fontSize: "20px",
+            fontSize: "18px",
             fontFamily: "Roboto, sans-serif"
           }}
         >
