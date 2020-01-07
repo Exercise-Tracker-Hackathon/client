@@ -18,8 +18,8 @@ const AddWorkout = ({ handleClose, addExercise }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    let { reps } = exercise;
-    reps = parseInt(reps);
+    // let { reps } = exercise;
+    // reps = parseInt(reps);
     axiosWithAuth()
       .post("https://pumpodoro.herokuapp.com/api/exercises", {
         ...exercise,
@@ -45,6 +45,7 @@ const AddWorkout = ({ handleClose, addExercise }) => {
             type="text"
             value={exercise.name}
             placeholder="Push Ups"
+            required
           />
         </Form.Group>
 
@@ -58,6 +59,8 @@ const AddWorkout = ({ handleClose, addExercise }) => {
             type="number"
             placeholder="20"
             value={exercise.reps}
+            min="1"
+            required
             style={{ width: "75px", textAlign: "center" }}
           />
         </Form.Group>
