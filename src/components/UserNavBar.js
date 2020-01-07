@@ -13,7 +13,8 @@ const UserNavBar = ({ logOut }) => {
         justifyContent: "space-between",
         alignItems: "center",
         flexWrap: "wrap",
-        margin: "0 auto"
+        margin: "0 auto",
+        maxWidth: "1600px"
       }}
     >
       <NavLink to="/" style={{ textDecoration: "none" }}>
@@ -45,12 +46,14 @@ const UserNavBar = ({ logOut }) => {
         <Button
           href="/profile"
           style={{ background: "none", border: "none", color: "#9F9F9F" }}
+          variant="light"
         >
           Dashboard
         </Button>
         <Button
           onClick={logOut}
           style={{ background: "none", border: "none", color: "#9F9F9F" }}
+          variant="light"
         >
           Logout
         </Button>

@@ -22,7 +22,8 @@ const NavBar = props => {
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
-          margin: "0 auto"
+          margin: "0 auto",
+          maxWidth: "1600px"
         }}
       >
         <NavLink to="/" style={{ textDecoration: "none" }}>
