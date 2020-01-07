@@ -61,7 +61,7 @@ const Dashboard = () => {
           alt="plus"
           style={{ height: "18px", margin: "0 10px 0 0" }}
         />
-        Create an Exercise
+        Create an exercise
       </Button>
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton style={{ border: "none" }}>

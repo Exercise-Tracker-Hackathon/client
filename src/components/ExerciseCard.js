@@ -23,7 +23,7 @@ const ExerciseCard = ({ exercise, addSet }) => {
         background: "#FFEBE4",
         border: "none",
         borderRadius: "5px",
-        margin: "5px 15px"
+        margin: "10px"
       }}
     >
       <Card.Body style={{ display: "flex", justifyContent: "space-between" }}>

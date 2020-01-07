@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 const AddWorkout = ({ handleClose, addExercise }) => {
   const [exercise, setExercise] = React.useState({
     type: "",
-    reps: 0
+    reps: ""
   });
 
   const handleChange = e => {
@@ -18,8 +18,7 @@ const AddWorkout = ({ handleClose, addExercise }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    let { reps } = exercise;
-    reps = parseInt(reps);
+    if (exercise.type === "" || exercise.reps === "") return;
     axiosWithAuth()
       .post("https://pumpodoro.herokuapp.com/api/exercises", {
         ...exercise,
@@ -45,6 +44,7 @@ const AddWorkout = ({ handleClose, addExercise }) => {
             type="text"
             value={exercise.name}
             placeholder="Push Ups"
+            required
           />
         </Form.Group>
 
@@ -56,9 +56,11 @@ const AddWorkout = ({ handleClose, addExercise }) => {
             onChange={handleChange}
             name="reps"
             type="number"
-            placeholder="20"
+            placeholder="5"
             value={exercise.reps}
-            style={{ width: "75px", textAlign: "center" }}
+            min="1"
+            required
+            style={{ width: "65px", textAlign: "start" }}
           />
         </Form.Group>
         <p
