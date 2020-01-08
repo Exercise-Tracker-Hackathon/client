@@ -16,17 +16,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  width: 140px;
-  height: 63px;
-  max-width: 100%;
+  justify-content: center;
+  width: 175px;
+  height: 75px;
   background: #656565;
   border-radius: 5px;
 }
 
-.timer-container label {
-  margin-bottom: 0;
-  margin-right: 10px;
+@media screen and (max-width: 500px) {
+  .timer-container {
+  }
 }
 
 .current-timer {

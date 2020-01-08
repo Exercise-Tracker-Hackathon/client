@@ -1,5 +1,4 @@
 .landing-page .main-hero {
-  background: #ffebe4;
   background: none;
   min-width: 100%;
   display: flex;
@@ -15,6 +14,12 @@
 .landing-page .main-hero .button {
   margin: 40px 0 100px 0;
   font-size: 20px;
+}
+
+.landing-page .main-heading {
+  margin: 4% 0 2% 15%;
+  font-size: 48px;
+  font-family: Actor, sans-serif;
 }
 
 .landing-page .about-section {
@@ -44,6 +49,17 @@
   justify-content: space-between;
 }
 
+.landing-page .sub-heading {
+  margin: 4% 0 0.5% 15%;
+  font-size: 48px;
+  font-family: Actor, sans-serif;
+}
+
+.landing-page .subtitle {
+  margin: 0 0 2% 15%;
+  font-size: 24px;
+}
+
 .landing-page .benefits {
   background: #6bb48c;
   width: 100%;
@@ -64,30 +80,90 @@
   align-items: center;
   justify-content: center;
   padding: 15px;
+  margin-right: 5%;
 }
 .landing-page .benefits section p {
   text-align: center;
 }
 
+.heart {
+  width: 171px;
+}
+
+.brain,
+.productivity {
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+.man {
+  height: 200px;
+  align-self: flex-end;
+  margin: 20px 0 0 0;
+}
+
+.woman {
+  height: 177px;
+  align-self: flex-start;
+  margin: 0 0 0 20px;
+}
+
 @media screen and (max-width: 500px) {
+  .landing-page .main-hero {
+    min-width: auto;
+  }
+
+  .landing-page .main-hero img {
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .landing-page .main-heading {
+    font-size: 38px;
+  }
   .landing-page .about-section {
     display: flex;
-    flex-direction: column;
-    width: 90vw;
+    flex-direction: column-reverse;
+    width: 100%;
+    border-radius: 0;
+    padding: 50px 20px;
   }
+
   .landing-page .about-section .content {
-    width: 60vw;
+    width: 100%;
   }
   .landing-page .about-section .image-ctr {
-    width: 50vw;
-    margin-right: 80px
+    width: 100%;
+    margin: 0 0 30px 0;
+    flex-direction: row-reverse;
+  }
+
+  .landing-page .sub-heading {
+    font-size: 38px;
+  }
+
+  .landing-page .subtitle {
+    font-size: 16px;
   }
 
   .landing-page .benefits {
     flex-direction: column;
+    align-items: center;
   }
 
   .landing-page .benefits section {
-    margin: 4% 0 4% 0;
+    margin: 4% 0;
+  }
+
+  .man {
+    height: 125px;
+    align-self: flex-start;
+    margin: 10px 0 20px 0;
+  }
+
+  .woman {
+    height: 100px;
+    align-self: flex-end;
+    margin: 0 0 0 20px;
   }
 }

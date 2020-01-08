@@ -34,15 +34,7 @@ const LandingPage = () => {
       </div>
 
       {/* Section 2 */}
-      <h2
-        style={{
-          margin: "4% 0 2% 15%",
-          fontSize: "48px",
-          fontFamily: "Actor, sans-serif"
-        }}
-      >
-        What is pumpodoro?
-      </h2>
+      <h2 className="main-heading">What is pumpodoro?</h2>
       <div className="about-section">
         <div className="content">
           <p style={{ marginBottom: "50px" }}>
@@ -59,65 +51,33 @@ const LandingPage = () => {
           </p>
         </div>
         <div className="image-ctr">
-          <img
-            src={man}
-            alt="man lifting weights"
-            style={{
-              height: "200px",
-              alignSelf: "flex-end",
-              margin: "20px 0 0 0"
-            }}
-          />
-          <img
-            src={woman}
-            alt="woman lifting weights"
-            style={{
-              height: "177px",
-              alignSelf: "flex-start",
-              margin: "0 0 0 20px"
-            }}
-          />
+          <img src={man} alt="man lifting weights" className="man" />
+          <img src={woman} alt="woman lifting weights" className="woman" />
         </div>
       </div>
       {/* Section 3 */}
-      <h2
-        style={{
-          margin: "4% 0 0.5% 15%",
-          fontSize: "48px",
-          fontFamily: "Actor, sans-serif"
-        }}
-      >
-        A few benefits
-      </h2>
-      <p style={{ margin: "0 0 2% 15%", fontSize: "24px" }}>
+      <h2 className="sub-heading">A few benefits</h2>
+      <p className="subtitle">
         Here are just a few reasons to add pumpodoro to your daily routine.
       </p>
 
       <div className="benefits">
-        <section style={{ marginRight: "5%" }}>
-          <img src={heart} alt="heart" style={{ width: "171px" }} />
+        <section>
+          <img src={heart} alt="heart" className="heart" />
           <p>
             High intensity exercise for 5-10 minutes can provide the same
             cardiovascular benefit as 45 minutes of moderate exercise.
           </p>
         </section>
-        <section style={{ marginRight: "5%" }}>
-          <img
-            src={brain}
-            alt="brain"
-            style={{ width: "160px", marginBottom: "15px" }}
-          />
+        <section>
+          <img src={brain} alt="brain" className="brain" />
           <p>
             High intensity interval workouts help improve focus and cognitive
             abilities.
           </p>
         </section>
         <section>
-          <img
-            src={productivity}
-            alt="chart"
-            style={{ width: "160px", marginBottom: "15px" }}
-          />
+          <img src={productivity} alt="chart" className="productivity" />
           <p>
             Regular exercise improves productivity by things I haven’t really
             researched well enough to say yet.
