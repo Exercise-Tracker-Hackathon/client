@@ -14,14 +14,7 @@ const LandingPage = () => {
       {/* Section 1 */}
       <div className="main-hero">
         <img src={titleImg} alt="pumpodoro logo" />
-        <h2
-          style={{
-            color: "#A33A18",
-            fontSize: "48px",
-            textAlign: "center",
-            fontFamily: "Actor, sans-serif"
-          }}
-        >
+        <h2 className="hero-title">
           Pumpodoro combines <br /> activity with productivity
         </h2>
         <Button
@@ -37,11 +30,11 @@ const LandingPage = () => {
       <h2 className="main-heading">What is pumpodoro?</h2>
       <div className="about-section">
         <div className="content">
-          <p style={{ marginBottom: "50px" }}>
+          <p style={{ marginBottom: "2em" }}>
             Pumpodoro uses the popular Pomodoro technique to help you create
             great habits.
           </p>
-          <p style={{ marginBottom: "50px" }}>
+          <p style={{ marginBottom: "2em" }}>
             Pumpodoro encourages you to step away from your desk and get active.
           </p>
           <p>

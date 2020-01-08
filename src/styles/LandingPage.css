@@ -11,6 +11,13 @@
   margin-top: 60px;
 }
 
+.hero-title {
+  color: #a33a18;
+  font-size: 48px;
+  text-align: center;
+  font-family: Actor, sans-serif;
+}
+
 .landing-page .main-hero .button {
   margin: 40px 0 100px 0;
   font-size: 20px;
@@ -113,13 +120,19 @@
     min-width: auto;
   }
 
+  .hero-title {
+    font-size: 28px;
+  }
+
   .landing-page .main-hero img {
     margin-top: 0px;
     width: 100%;
   }
 
   .landing-page .main-heading {
-    font-size: 38px;
+    font-size: 28px;
+    text-align: start;
+    margin: 10px 20px;
   }
   .landing-page .about-section {
     display: flex;
@@ -131,6 +144,7 @@
 
   .landing-page .about-section .content {
     width: 100%;
+    font-size: 18px;
   }
   .landing-page .about-section .image-ctr {
     width: 100%;
@@ -140,10 +154,12 @@
 
   .landing-page .sub-heading {
     font-size: 38px;
+    margin: 20px 0 5px 20px;
   }
 
   .landing-page .subtitle {
     font-size: 16px;
+    margin: 0 0 20px 20px;
   }
 
   .landing-page .benefits {

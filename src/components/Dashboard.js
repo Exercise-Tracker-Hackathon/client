@@ -7,6 +7,7 @@ import logo from "../assets/pumpordo-logo.png";
 import ExerciseCardList from "./ExerciseCardList";
 import plus from "../assets/plus.svg";
 import HeatMap from "./HeatMap";
+import "../styles/Dashboard.css";
 
 const Dashboard = () => {
   const [exercises, setExercises] = useState([]);
@@ -83,7 +84,7 @@ const Dashboard = () => {
             alt="plus"
             style={{ height: "18px", margin: "0 10px 0 0" }}
           />
-          Create an exercise
+          <span className="btn-text">Create an exercise</span>
         </Button>
       </div>
 
