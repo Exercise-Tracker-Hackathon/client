@@ -23,11 +23,6 @@
   border-radius: 5px;
 }
 
-@media screen and (max-width: 500px) {
-  .timer-container {
-  }
-}
-
 .current-timer {
   text-align: center;
   font-family: monospace;
