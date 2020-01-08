@@ -76,7 +76,13 @@ const Timer = () => {
       <div className="timer-container">
         {isRunning ? null : (
           <>
-            <label htmlFor="time" style={{ color: "#CECECE" }}>
+            <label
+              htmlFor="time"
+              style={{
+                color: "#CECECE",
+                whiteSpace: "nowrap"
+              }}
+            >
               Start a Timer
             </label>
             <div
@@ -113,7 +119,9 @@ const Timer = () => {
         )}
         {isRunning ? (
           <>
-            <label style={{ color: "#CECECE" }}>Time Remaining</label>
+            <label style={{ color: "#CECECE", whiteSpace: "nowrap" }}>
+              Time Remaining
+            </label>
             <div
               style={{
                 display: "flex",

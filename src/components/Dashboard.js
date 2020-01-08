@@ -7,6 +7,7 @@ import logo from "../assets/pumpordo-logo.png";
 import ExerciseCardList from "./ExerciseCardList";
 import plus from "../assets/plus.svg";
 import HeatMap from "./HeatMap";
+import "../styles/Dashboard.css";
 
 const Dashboard = () => {
   const [exercises, setExercises] = useState([]);
@@ -51,18 +52,11 @@ const Dashboard = () => {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: "flex-start",
           width: "100%"
         }}
       >
-        <p
-          style={{
-            color: "#676767",
-            padding: "10px 30px",
-            fontSize: "18px",
-            fontFamily: "Roboto, sans-serif"
-          }}
-        >
+        <p className="dashboard-main-header">
           {exercises.length > 0 ? "Today's exercises" : null}
         </p>
         <Button
@@ -70,8 +64,6 @@ const Dashboard = () => {
           style={{
             background: "none",
             border: "none",
-            padding: "10px 30px",
-            alignSelf: "center",
             color: "#9f9f9f",
             display: "flex",
             alignItems: "center"
@@ -83,7 +75,7 @@ const Dashboard = () => {
             alt="plus"
             style={{ height: "18px", margin: "0 10px 0 0" }}
           />
-          Create an exercise
+          <span className="btn-text">Create an exercise</span>
         </Button>
       </div>
 
@@ -101,12 +93,12 @@ const Dashboard = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            margin: "100px 0 0 0"
+            margin: "8% 0 0 0"
           }}
         >
           <p
             style={{
-              fontSize: "24px",
+              fontSize: "1.2em",
               fontFamily: "Actor, sans-serif",
               color: "#9f9f9f"
             }}
@@ -114,7 +106,7 @@ const Dashboard = () => {
             You don’t have any exercises yet. <br /> Create an exercise to get
             started.
           </p>
-          <img src={logo} alt="logo" style={{ opacity: 0.5 }} />
+          <img src={logo} alt="logo" style={{ opacity: 0.5, width: "90%" }} />
         </div>
       )}
       {exercises.length > 0 && (

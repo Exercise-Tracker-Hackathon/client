@@ -16,18 +16,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  width: 130px;
-  height: 63px;
-  padding: 0 0 2px 6px;
-  max-width: 100%;
+  justify-content: center;
+  width: 175px;
+  height: 75px;
   background: #656565;
   border-radius: 5px;
-}
-
-.timer-container label {
-  margin-bottom: 0;
-  margin-right: 10px;
 }
 
 .current-timer {
