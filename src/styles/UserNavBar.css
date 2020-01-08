@@ -39,7 +39,7 @@
     position: absolute;
     top: 5;
   }
-  .nav-logo h3 {
+  .nav-logo h3 .text {
     display: none;
   }
   .nav-links {

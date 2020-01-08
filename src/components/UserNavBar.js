@@ -13,8 +13,10 @@ const UserNavBar = ({ logOut }) => {
         style={{ textDecoration: "none", display: "flex" }}
         className="nav-logo"
       >
-        <Logo />
-        <h3>pumpodoro</h3>
+        <h3>
+          <Logo />
+          <span className="text">pumpodoro</span>
+        </h3>
       </NavLink>
 
       <div className="nav-timer">
