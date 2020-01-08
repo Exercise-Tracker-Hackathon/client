@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import UserNavBar from "./UserNavBar";
 import Logo from "./Logo.js";
+import "../styles/UserNavBar.css";
 
 const NavBar = props => {
   console.log(props.isLoggedIn);
@@ -15,18 +16,8 @@ const NavBar = props => {
     return <UserNavBar logOut={logOut} {...props} />;
   } else {
     return (
-      <nav
-        style={{
-          padding: "15px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          margin: "0 auto",
-          maxWidth: "1600px"
-        }}
-      >
-        <NavLink to="/" style={{ textDecoration: "none" }}>
+      <nav className="user-nav-bar">
+        <NavLink to="/" style={{ textDecoration: "none" }} className="nav-logo">
           <h3
             style={{
               margin: "0",
@@ -36,10 +27,11 @@ const NavBar = props => {
               fontFamily: "Actor, sans-serif"
             }}
           >
-            <Logo /> pumpodoro
+            <Logo />
+            <span className="text">pumpodoro</span>
           </h3>
         </NavLink>
-        <div>
+        <div className="nav-links">
           <NavLink style={{ margin: "0 10px", color: "#9F9F9F" }} to="/login">
             Login
           </NavLink>
